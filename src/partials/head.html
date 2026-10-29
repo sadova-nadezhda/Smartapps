@@ -16,10 +16,15 @@
   <!-- Тема  -->
   <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 
-  <!-- Появление контента: скрываем [data-reveal] только при включённом JS (reveal.scss) -->
   <script>document.documentElement.classList.add("js-reveal")</script>
+
+  <!-- Прячем body до загрузки style.css — защита от FOUC -->
+  <style>body{visibility:hidden}</style>
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Firefox: не даём отрисовать body до загрузки CSS (защита от FOUC) -->
+  <script>0</script>
 </head>
 <body>

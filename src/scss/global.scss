@@ -65,6 +65,7 @@ body {
   text-rendering: optimizeSpeed;
   overflow-x: hidden;
   overflow-x: clip;
+  visibility: visible;
 
   &.no-scroll {
     overflow: hidden;
@@ -246,7 +247,6 @@ input:focus-visible {
   flex-shrink: 0;
   gap: s(8);
   height: s(35);
-  // Раскрытие по ширине слева направо при появлении в экране (tags.js)
   clip-path: inset(0 100% 0 0);
   transition: clip-path 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 
@@ -328,7 +328,6 @@ input:focus-visible {
     }
   }
 
-  // После раскрытия перекрашивается в акцентный; секции с линиями задают задержку под них
   &::before,
   &::after,
   &__text {
