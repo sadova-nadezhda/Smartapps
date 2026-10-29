@@ -1,0 +1,108 @@
+@use "../functions" as *;
+
+// ======================
+// Страница благодарности
+// ======================
+.thank-you {
+  padding-top: s(40);
+
+  @include tablet {
+    padding-top: s(20);
+  }
+
+  &__frame {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: s(600);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+  }
+
+  &__words {
+    display: flex;
+    flex-direction: column;
+    padding: 0 s(22);
+    color: var(--color-bg);
+    -webkit-text-stroke: 2px var(--color-line);
+    paint-order: stroke fill;
+    font-size: s(100);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+    user-select: none;
+
+    @include tablet {
+      order: 1;
+      height: s(260);
+      padding: s(8) s(20) 0;
+      font-size: s(72);
+    }
+
+    @include mobile {
+      height: s(180);
+      padding: s(6) s(16) 0;
+      font-size: s(48);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: center;
+    padding: s(40) s(40) s(40) s(10);
+
+    @include tablet {
+      padding: s(40) s(20) s(32);
+    }
+
+    @include mobile {
+      padding: s(24) s(16);
+    }
+  }
+
+  &__title {
+    font-size: s(32);
+
+    @include tablet {
+      font-size: s(28);
+    }
+
+    @include mobile {
+      font-size: s(24);
+    }
+  }
+
+  &__text {
+    margin-top: s(14);
+    font-size: s(16);
+
+    @include mobile {
+      margin-top: s(12);
+      font-size: s(14);
+    }
+  }
+
+  &__button {
+    margin-top: s(32);
+    padding-inline: s(64);
+
+    @include mobile {
+      margin-top: s(24);
+      padding-inline: s(16);
+    }
+
+    &:active {
+      background-color: var(--color-red-dark);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: s(4);
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@use "functions" as *;
+
+// ======================
+// Появление контента при скролле (reveal.js)
+// data-reveal="up|down|left|right|fade|scale" — элемент появляется сам (пусто = up);
+// data-reveal-stagger="<вариант>" — дочерние элементы контейнера появляются по очереди.
+// left/right — откуда выезжает элемент. Задержка — data-reveal-delay (мс).
+// Скрываем только при включённом JS: класс .js-reveal ставит inline-скрипт в head.html.
+// Анимация (а не transition), чтобы не перебивать собственные transition элементов;
+// fill-mode backwards — после окончания элемент возвращается к своим стилям.
+// ======================
+[data-reveal],
+[data-reveal-stagger] {
+  --reveal-x: 0;
+  --reveal-y: #{s(40)};
+  --reveal-scale: 1;
+}
+
+[data-reveal="down"],
+[data-reveal-stagger="down"] {
+  --reveal-y: #{s(-40)};
+}
+
+[data-reveal="left"],
+[data-reveal-stagger="left"] {
+  --reveal-x: #{s(-40)};
+  --reveal-y: 0;
+}
+
+[data-reveal="right"],
+[data-reveal-stagger="right"] {
+  --reveal-x: #{s(40)};
+  --reveal-y: 0;
+}
+
+[data-reveal="fade"],
+[data-reveal-stagger="fade"] {
+  --reveal-y: 0;
+}
+
+[data-reveal="scale"],
+[data-reveal-stagger="scale"] {
+  --reveal-y: 0;
+  --reveal-scale: 0.94;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js-reveal {
+    [data-reveal]:not(.is-revealed),
+    [data-reveal-stagger] > :not(.is-revealed) {
+      opacity: 0;
+    }
+  }
+
+  [data-reveal].is-revealed,
+  [data-reveal-stagger] > .is-revealed {
+    animation: reveal var(--reveal-duration, 0.9s) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s) backwards;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: var(--reveal-x) var(--reveal-y);
+    scale: var(--reveal-scale);
+  }
+}

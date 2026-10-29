@@ -1,0 +1,69 @@
+@use "../functions" as *;
+
+// ======================
+// Плавающий виджет связи
+// ======================
+
+.contact-widget {
+  position: fixed;
+  right: calc(#{s(40)} + var(--scrollbar-width));
+  bottom: s(40);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: s(16);
+
+  @include tablet {
+    right: calc(#{s(20)} + var(--scrollbar-width));
+    bottom: calc(#{s(20)} + env(safe-area-inset-bottom));
+  }
+
+  @include mobile {
+    right: calc(#{s(16)} + var(--scrollbar-width));
+    bottom: calc(#{s(16)} + env(safe-area-inset-bottom));
+    gap: s(12);
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: s(56);
+    height: s(56);
+    border-radius: 50%;
+    color: #FFFFFF;
+    background-color: var(--color-accent);
+    transition: background-color 0.3s;
+
+    @include mobile {
+      width: s(48);
+      height: s(48);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-red-dark);
+      }
+    }
+
+    &:active {
+      background-color: var(--color-red-dark);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: s(4);
+    }
+
+    svg {
+      display: block;
+      width: s(26);
+      height: s(26);
+
+      @include mobile {
+        width: s(22);
+        height: s(22);
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@use "../functions" as *;
+
+// ======================
+// Нам доверяют: плашка + бегущая строка логотипов
+// ======================
+.clients {
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: s(56);
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: s(24);
+    }
+  }
+
+  &__marquee {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-right: s(-40);
+    overflow: hidden;
+
+    @include tablet {
+      align-self: stretch;
+      margin-inline: s(-40);
+    }
+
+    @include mobile {
+      margin-inline: s(-16);
+    }
+  }
+
+  &__track {
+    display: flex;
+    width: max-content;
+  }
+
+  &__marquee.is-running &__track {
+    animation: clients-marquee var(--marquee-duration, 30s) linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: s(48);
+    padding-right: s(48);
+
+    @include mobile {
+      gap: s(28);
+      padding-right: s(28);
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+  }
+
+  &__logo {
+    display: block;
+    width: auto;
+    height: calc(var(--width-multiplier) * var(--h, 40));
+
+    :root[data-theme="light"] & {
+      filter: invert(1);
+    }
+  }
+}
+
+@keyframes clients-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}

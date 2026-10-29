@@ -1,0 +1,100 @@
+<section class="services section-pad-bottom" id="services" aria-labelledby="services-title">
+  <div class="services__container container">
+    <svg class="services__lines" aria-hidden="true" focusable="false"></svg>
+
+    <div class="services__head">
+      <h2 class="tag services__tag" id="services-title"><span class="tag__text">Наши услуги</span></h2>
+      <a class="button services__all services__all--head" href="#">Все услуги</a>
+    </div>
+
+    <div class="services__body">
+      <div class="services__info">
+        <span class="services__info-hatch" aria-hidden="true"></span>
+        <p class="services__info-text">В большинстве случаев, постоянный мониторинг сервиса сокращает время простоя сервиса в пересчёте на один запрос</p>
+        <span class="services__info-hatch" aria-hidden="true"></span>
+      </div>
+
+      <div class="services__group services__group--right">
+        @@include('sections/services-node.html', { "num": "01", "title": "Экспертиза", "panel": "services-panel-1" })
+        <div class="services__panel" id="services-panel-1">
+          <div class="services__panel-inner">
+            <ul class="services__list">
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Консалтинг и планирование", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Проектирование и&nbsp;внедрение", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Сопровождение ИТ&#8209;инфраструктуры", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="services__group services__group--left">
+        @@include('sections/services-node.html', { "num": "02", "title": "Решения", "panel": "services-panel-2" })
+        <div class="services__panel" id="services-panel-2">
+          <div class="services__panel-inner">
+            <ul class="services__list">
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "ИТ&#8209;инфраструктура", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Корпоративные сети", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Кибербезопасность", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Бизнес-системы", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Облачные решения", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="services__group services__group--right">
+        @@include('sections/services-node.html', { "num": "03", "title": "Оборудование и ПО", "panel": "services-panel-3" })
+        <div class="services__panel" id="services-panel-3">
+          <div class="services__panel-inner">
+            <ul class="services__list">
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Программное обеспечение", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Серверное оборудование", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Сетевое оборудование", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Системы хранения данных", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+              <li class="services__item">
+                @@include('sections/service-card.html', { "href": "#", "title": "Восстановленное оборудование", "text": "Как правило, постоянный мониторинг сервиса уменьшает риск утечки данных при росте числа пользователей" })
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="services__cta">
+        <span class="services__brackets" aria-hidden="true"></span>
+        <span class="services__cta-line" aria-hidden="true"></span>
+        <h3 class="services__cta-title">Получите консультацию</h3>
+        <p class="services__cta-text">Оставьте заявку и мы ответим на все ваши вопросы</p>
+        <div class="services__cta-img" aria-hidden="true">@@include('../img/consult.svg')</div>
+        <button class="button button--accent services__cta-btn modal-btn" type="button" data-type="feedback">Получить консультацию</button>
+      </div>
+    </div>
+
+    <div class="services__footer" data-reveal>
+      <a class="button services__all" href="#">Все услуги</a>
+    </div>
+  </div>
+</section>

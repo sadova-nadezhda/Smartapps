@@ -1,0 +1,22 @@
+@use "vendor/swiper-bundle.min";
+@use "fonts";
+@use "lenis";
+@use "global";
+@use "header";
+@use "modals";
+@use "reveal";
+
+// Глобальные секции
+@use "sections/feedback";
+@use "sections/footer";
+@use "sections/contact-widget";
+
+// Остальные секции подключать сюда:
+@use "sections/hero";
+@use "sections/why";
+@use "sections/clients";
+@use "sections/services";
+@use "sections/project-card";
+@use "sections/projects";
+@use "sections/not-found";
+@use "sections/thank-you";

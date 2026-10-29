@@ -1,0 +1,140 @@
+@use "../functions" as *;
+
+// ======================
+// Наши проекты
+// ======================
+.projects {
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: s(24);
+    margin-bottom: s(32);
+
+    @include mobile {
+      margin-bottom: s(24);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: s(12);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: s(44);
+    height: s(44);
+    padding: 0;
+    border: 1px solid var(--color-line);
+    border-radius: 50%;
+    color: var(--color-text);
+    transition: border-color 0.3s, opacity 0.3s;
+
+    @media (hover: hover) {
+      &:hover:not(:disabled) {
+        border-color: var(--color-text);
+      }
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  &__arrow-icon {
+    width: s(20);
+    height: s(20);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &__slider {
+    @include tablet {
+      margin-right: s(-40);
+    }
+
+    @include mobile {
+      margin-right: s(-16);
+    }
+  }
+
+  &__slide {
+    width: calc((100% - #{s(24)} * 2) / 3);
+    height: auto;
+
+    @include tablet {
+      width: s(320);
+    }
+
+    @include mobile {
+      width: s(311);
+    }
+  }
+
+  &__progress {
+    position: relative;
+    height: s(2);
+    margin-top: s(32);
+
+    @include mobile {
+      margin-top: s(24);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 50% 0 auto;
+      height: 1px;
+      background-color: var(--color-line);
+      transform: translateY(-50%);
+    }
+  }
+
+  &__progress-fill {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-accent);
+    transform: scaleX(var(--progress, 0));
+    transform-origin: left center;
+    transition-property: transform;
+    transition-timing-function: ease;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: s(40);
+
+    @include mobile {
+      margin-top: s(32);
+    }
+  }
+
+  &__all {
+    min-width: s(210);
+    border: 1px solid var(--color-line);
+    color: var(--color-text);
+    transition: border-color 0.3s, color 0.3s;
+
+    @include mobile {
+      height: s(54);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--color-text);
+      }
+    }
+  }
+}

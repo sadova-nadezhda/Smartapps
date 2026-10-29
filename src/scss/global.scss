@@ -1,0 +1,386 @@
+@use "functions" as *;
+
+:root {
+  --width-base: 1440;
+  --width-current: 100vw;
+  --width-multiplier: calc(var(--width-current) / var(--width-base));
+
+  --scrollbar-width: 0px;
+
+  --color-bg: #181818;
+  --color-text: #FFFFFF;
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --color-accent: #E73C4D;
+  --color-red-dark: #BD2F3D;
+  --color-grey: #565656;
+  --color-grey-2: #424242;
+  --color-light: #E3E3E3;
+  --color-surface: #222222;
+  --color-line: var(--color-grey);
+  --font-main: "Raleway", system-ui, sans-serif;
+
+  color-scheme: dark;
+}
+
+// Светлая тема
+:root[data-theme="light"] {
+  --color-bg: #F5F5F5;
+  --color-text: #181818;
+  --color-text-muted: rgba(24, 24, 24, 0.6);
+  --color-surface: #E8E8E8;
+  --color-line: #BFBFBF;
+
+  color-scheme: light;
+}
+
+@include tablet {
+  :root {
+    --width-base: 768;
+    --width-current: 100vmin;
+  }
+}
+
+@include mobile {
+  :root {
+    --width-base: 375;
+    --width-current: 100vmin;
+  }
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: s(65);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font: 400 s(16)/1.2 var(--font-main);
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+  overflow-x: clip;
+
+  &.no-scroll {
+    overflow: hidden;
+    overflow: clip;
+    padding-right: var(--scrollbar-width);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1 {
+  font: 600 s(44)/1.1 var(--font-main);
+  @include tablet {
+    font-size: s(36);
+  }
+  @include mobile {
+    font-size: s(30);
+  }
+}
+
+h2 {
+  font: 600 s(32)/1.1 var(--font-main);
+  @include tablet {
+    font-size: s(24);
+  }
+  @include mobile {
+    font-size: s(20);
+  }
+}
+
+h3 {
+  font: 600 s(22)/1.1 var(--font-main);
+  @include mobile {
+    font-size: s(18);
+  }
+}
+
+h4 {
+  font: 600 s(20)/1.1 var(--font-main);
+  @include mobile {
+    font-size: s(16);
+  }
+}
+
+h5,
+h6 {
+  font-family: var(--font-main);
+  line-height: 1.2em;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style-position: inside;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  padding-inline: s(40);
+
+  @include mobile {
+    padding-inline: s(16);
+  }
+}
+
+// Кнопка
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: s(46);
+  padding: s(16);
+  border-radius: s(24);
+  font-size: s(14);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.3s, color 0.3s;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &--accent {
+    color: #FFFFFF;
+    background-color: var(--color-accent);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-red-dark);
+      }
+    }
+  }
+
+  &--white {
+    color: #181818;
+    background-color: transparent;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-light);
+      }
+    }
+  }
+}
+
+.frame {
+  border: 1px solid var(--color-line);
+  overflow: hidden;
+}
+
+.tag {
+  --tag-slant: #{s(20)};
+
+  display: flex;
+  flex-shrink: 0;
+  gap: s(8);
+  height: s(35);
+  // Раскрытие по ширине слева направо при появлении в экране (tags.js)
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+
+  &.is-ready {
+    clip-path: inset(0);
+  }
+
+  @include desktop {
+    --tag-slant: #{s(34)};
+
+    gap: 0;
+  }
+
+  @include mobile {
+    --tag-slant: #{s(34)};
+
+    gap: 0;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    order: 1;
+    width: s(60);
+    background-color: var(--color-line);
+    clip-path: polygon(var(--tag-slant) 0, 100% 0, calc(100% - var(--tag-slant)) 100%, 0 100%);
+
+    @include desktop {
+      margin-left: s(-18);
+    }
+
+    @include mobile {
+      margin-left: s(-23);
+    }
+  }
+
+  @include desktop {
+    &::before {
+      width: s(94);
+    }
+
+    &::after {
+      width: s(64);
+    }
+  }
+
+  @include mobile {
+    &::before {
+      width: s(65);
+    }
+
+    &::after {
+      width: s(53);
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    min-width: s(255);
+    padding-inline: s(80);
+    color: #FFFFFF;
+    background-color: var(--color-line);
+    clip-path: polygon(var(--tag-slant) 0, 100% 0, calc(100% - var(--tag-slant)) 100%, 0 100%);
+    font-size: s(14);
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @include desktop {
+      min-width: s(254);
+      font-size: s(15);
+      font-weight: 500;
+    }
+
+    @include mobile {
+      min-width: s(240);
+      padding-inline: s(40);
+    }
+  }
+
+  // После раскрытия перекрашивается в акцентный; секции с линиями задают задержку под них
+  &::before,
+  &::after,
+  &__text {
+    transition: background-color 0.6s var(--tag-color-delay, 0.8s);
+  }
+
+  &.is-ready::before,
+  &.is-ready::after,
+  &.is-ready &__text {
+    background-color: var(--color-accent);
+  }
+}
+
+.section {
+  &-pad {
+    padding: s(130) 0;
+    @include tablet {
+      padding: s(110) 0;
+    }
+    @include mobile {
+      padding: s(84) 0;
+    }
+    &-top {
+      padding-top: s(130);
+      @include tablet {
+        padding-top: s(110);
+      }
+      @include mobile {
+        padding-top: s(84);
+      }
+    }
+    &-bottom {
+      padding-bottom: s(130);
+      @include tablet {
+        padding-bottom: s(110);
+      }
+      @include mobile {
+        padding-bottom: s(84);
+      }
+    }
+  }
+  &-hidden {
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}

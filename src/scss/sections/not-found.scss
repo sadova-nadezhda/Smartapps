@@ -1,0 +1,133 @@
+@use "../functions" as *;
+
+// ======================
+// Страница 404
+// ======================
+.not-found {
+  padding-top: s(40);
+
+  @include tablet {
+    padding-top: s(20);
+  }
+
+  &__frame {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__illustration {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1360 / 334;
+    color: var(--color-line);
+
+    @include tablet {
+      height: s(256);
+      aspect-ratio: auto;
+    }
+
+    @include mobile {
+      height: s(228);
+    }
+  }
+
+  &__line {
+    stroke-width: var(--line-w, 1);
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+
+    &--branch {
+      transition-duration: 1.8s;
+      transition-delay: 0.7s;
+    }
+  }
+
+  &__digits,
+  &__dot,
+  &__bar {
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  &__digits {
+    transition-duration: 0.8s;
+    transition-delay: 0.4s;
+  }
+
+  &__dot {
+    transition-delay: 0.6s;
+  }
+
+  &__bar {
+    transition-delay: 1.5s;
+  }
+
+  &__frame.is-ready &__line {
+    stroke-dashoffset: 0;
+  }
+
+  &__frame.is-ready &__digits,
+  &__frame.is-ready &__dot,
+  &__frame.is-ready &__bar {
+    opacity: 1;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: s(22) s(20) s(98);
+    text-align: center;
+
+    @include tablet {
+      padding: s(28) s(20) s(64);
+    }
+
+    @include mobile {
+      padding: s(24) s(16) s(32);
+    }
+  }
+
+  &__title {
+    font-size: s(32);
+
+    @include tablet {
+      font-size: s(28);
+    }
+
+    @include mobile {
+      font-size: s(24);
+    }
+  }
+
+  &__text {
+    margin-top: s(14);
+    font-size: s(16);
+
+    @include mobile {
+      margin-top: s(12);
+      font-size: s(14);
+    }
+  }
+
+  &__button {
+    margin-top: s(32);
+    padding-inline: s(64);
+
+    @include mobile {
+      margin-top: s(24);
+      padding-inline: s(16);
+    }
+
+    &:active {
+      background-color: var(--color-red-dark);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: s(4);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use "sass:math";
+
+@function s($value) {
+  @if not math.is-unitless($value) {
+    $value: math.div($value, $value * 0 + 1);
+  }
+  @return calc(var(--width-multiplier) * #{$value});
+}
+
+@mixin mobile { @media (max-width: 767px) { @content; } }
+@mixin tablet { @media (max-width: 1024px) { @content; } }
+@mixin desktop { @media (min-width: 1025px) { @content; } }
+@mixin desktop-landscape { @media (min-width: 1025px) and (min-aspect-ratio: 5/4) { @content; } }
+
+// Срезанные углы (верхний левый, нижний правый) с рамкой. Размер среза — --cut у блока.
+// Рамка — два слоя с одинаковым полигоном: ::before цвета рамки, ::after фон с отступом --border.
+// На диагонали ширина слоя меньше на (2 - √2) * --border, чтобы рамка была одной толщины
+@mixin cut-frame($bg: var(--color-surface)) {
+  --border: 1px;
+  --cut-inner: calc(var(--cut) - var(--border) * 0.586);
+
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &::before {
+    inset: 0;
+    background-color: var(--color-line);
+    clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+  }
+
+  &::after {
+    inset: var(--border);
+    background-color: $bg;
+    clip-path: polygon(var(--cut-inner) 0, 100% 0, 100% calc(100% - var(--cut-inner)), calc(100% - var(--cut-inner)) 100%, 0 100%, 0 var(--cut-inner));
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}

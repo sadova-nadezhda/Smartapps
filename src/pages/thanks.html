@@ -1,0 +1,27 @@
+@@include('head.html', { "title": "Заявка отправлена", "description": "Спасибо! Ваша заявка отправлена." })
+@@include('header.html', { "page": "thank-you" })
+
+<main class="main">
+  <section class="thank-you">
+    <div class="thank-you__container container">
+      <div class="thank-you__frame frame">
+        <div class="thank-you__words" aria-hidden="true">
+          <span class="thank-you__word">Рақмет</span>
+          <span class="thank-you__word">Thank you</span>
+          <span class="thank-you__word">Спасибо</span>
+          <span class="thank-you__word">Рақмет</span>
+          <span class="thank-you__word">Thank you</span>
+        </div>
+
+        <div class="thank-you__body">
+          <h1 class="thank-you__title">Ваша заявка отправлена</h1>
+          <p class="thank-you__text">Мы получили вашу заявку и&nbsp;уже обрабатываем её.<br>В&nbsp;ближайшее время с&nbsp;вами свяжется менеджер для уточнения деталей.</p>
+          <a class="thank-you__button button button--accent" href="index.html">Вернуться на главную</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+@@include('sections/footer.html')
+@@include('scripts.html')

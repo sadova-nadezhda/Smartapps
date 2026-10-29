@@ -1,0 +1,82 @@
+<section class="projects section-pad-bottom" id="projects" aria-labelledby="projects-title">
+  <div class="projects__container container">
+    <div class="projects__head">
+      <h2 class="tag projects__tag" id="projects-title"><span class="tag__text">Наши проекты</span></h2>
+
+      <div class="projects__nav" data-reveal="fade">
+        <button class="projects__arrow projects__arrow--prev" type="button" aria-label="Предыдущий проект">
+          <svg class="projects__arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 7l-5 5 5 5" /></svg>
+        </button>
+        <button class="projects__arrow projects__arrow--next" type="button" aria-label="Следующий проект">
+          <svg class="projects__arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 7l5 5-5 5" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="projects__slider swiper" aria-label="Проекты">
+      <div class="projects__list swiper-wrapper" data-reveal-stagger="right">
+        <div class="projects__slide swiper-slide">
+          @@include('sections/project-card.html', {
+            "title": "Центр мониторинга и эксплуатация ЦОД",
+            "text": "Автоматизировать обработку сканов и PDF, чтобы заявки проходили быстрее и с минимальным количеством ошибок ручного ввода.",
+            "industry": "ИТ и сервисы",
+            "direction": "ИТ-сервис и поддержка",
+            "href": "#"
+          })
+        </div>
+        <div class="projects__slide swiper-slide">
+          @@include('sections/project-card.html', {
+            "title": "Интеллектуальная обработка документов",
+            "text": "Снизить риск остановок ЦОД и обеспечить постоянный контроль состояния оборудования и инженерных систем.",
+            "industry": "Финансы и банки",
+            "direction": "Прикладное ПО / 1С / ERP",
+            "href": "#"
+          })
+        </div>
+        <div class="projects__slide swiper-slide">
+          @@include('sections/project-card.html', {
+            "title": "Модернизация ИТ-инфраструктуры государственного института развития",
+            "text": "Повысить управляемость и отказоустойчивость инфраструктуры государственного института развития с учётом широкой филиальной сети.",
+            "industry": "Госсектор",
+            "direction": "ИТ-инфраструктура",
+            "href": "#"
+          })
+        </div>
+        <!-- Копии для проверки слайдера -->
+        <div class="projects__slide swiper-slide">
+          @@include('sections/project-card.html', {
+            "title": "Центр мониторинга и эксплуатация ЦОД",
+            "text": "Автоматизировать обработку сканов и PDF, чтобы заявки проходили быстрее и с минимальным количеством ошибок ручного ввода.",
+            "industry": "ИТ и сервисы",
+            "direction": "ИТ-сервис и поддержка",
+            "href": "#"
+          })
+        </div>
+        <div class="projects__slide swiper-slide">
+          @@include('sections/project-card.html', {
+            "title": "Интеллектуальная обработка документов",
+            "text": "Снизить риск остановок ЦОД и обеспечить постоянный контроль состояния оборудования и инженерных систем.",
+            "industry": "Финансы и банки",
+            "direction": "Прикладное ПО / 1С / ERP",
+            "href": "#"
+          })
+        </div>
+        <div class="projects__slide swiper-slide">
+          @@include('sections/project-card.html', {
+            "title": "Модернизация ИТ-инфраструктуры государственного института развития",
+            "text": "Повысить управляемость и отказоустойчивость инфраструктуры государственного института развития с учётом широкой филиальной сети.",
+            "industry": "Госсектор",
+            "direction": "ИТ-инфраструктура",
+            "href": "#"
+          })
+        </div>
+      </div>
+    </div>
+
+    <div class="projects__progress" aria-hidden="true" data-reveal="fade" data-reveal-delay="300"><span class="projects__progress-fill"></span></div>
+
+    <div class="projects__footer" data-reveal>
+      <a class="button projects__all" href="#">Все проекты</a>
+    </div>
+  </div>
+</section>

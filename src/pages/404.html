@@ -1,0 +1,36 @@
+@@include('head.html', { "title": "Страница не найдена", "description": "Страница не найдена: возможно, ссылка устарела или страница была удалена" })
+@@include('header.html', { "page": "404" })
+
+<main class="main">
+  <section class="not-found">
+    <div class="not-found__container container">
+      <div class="not-found__frame frame">
+        <svg class="not-found__illustration" viewBox="1 1 1360 334" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true" focusable="false">
+          <path class="not-found__line not-found__line--box" d="M898 288L853 333H465V157L510 112H898V288Z" stroke="currentColor" pathLength="1" />
+          <g class="not-found__digits">
+          <path d="M804.219 285.208V256.363H750.641V234.862L811.745 158H828.231V234.683H844V256.363H828.231V285.208H804.219ZM774.832 234.683H806.907V194.192L774.832 234.683Z" fill="currentColor" />
+          <path d="M683.054 287C674.095 286.881 666.15 284.85 659.222 280.908C652.293 276.967 646.499 271.771 641.84 265.321C637.181 258.871 633.657 251.943 631.267 244.537C628.998 237.012 627.863 229.667 627.863 222.5C627.863 214.856 629.117 207.211 631.626 199.567C634.135 191.922 637.778 184.994 642.557 178.783C647.455 172.453 653.308 167.436 660.117 163.733C666.927 159.911 674.572 158 683.054 158C692.253 158 700.257 160.031 707.066 164.092C713.995 168.153 719.789 173.408 724.448 179.858C729.107 186.308 732.571 193.296 734.841 200.821C737.23 208.346 738.425 215.572 738.425 222.5C738.425 230.264 737.17 237.968 734.662 245.613C732.153 253.138 728.45 260.006 723.552 266.217C718.773 272.428 712.979 277.444 706.17 281.267C699.361 284.969 691.655 286.881 683.054 287ZM652.771 222.5C652.89 227.517 653.547 232.533 654.742 237.55C656.056 242.447 657.907 246.986 660.297 251.167C662.805 255.347 665.971 258.751 669.794 261.379C673.617 263.887 678.037 265.142 683.054 265.142C688.43 265.142 693.029 263.768 696.852 261.021C700.675 258.274 703.781 254.75 706.17 250.45C708.679 246.15 710.53 241.551 711.725 236.654C712.92 231.757 713.517 227.039 713.517 222.5C713.517 217.483 712.86 212.526 711.546 207.629C710.351 202.613 708.44 198.014 705.812 193.833C703.303 189.653 700.137 186.308 696.314 183.8C692.611 181.172 688.191 179.858 683.054 179.858C677.798 179.858 673.258 181.232 669.436 183.979C665.613 186.726 662.447 190.25 659.938 194.55C657.549 198.85 655.757 203.449 654.563 208.346C653.368 213.243 652.771 217.961 652.771 222.5Z" fill="currentColor" />
+          <path d="M573.579 285.208V256.363H520V234.862L581.105 158H597.59V234.683H613.359V256.363H597.59V285.208H573.579ZM544.191 234.683H576.267V194.192L544.191 234.683Z" fill="currentColor" />
+          </g>
+          <path class="not-found__line not-found__line--branch" d="M681 108L681 1" stroke="currentColor" pathLength="1" />
+          <circle class="not-found__dot" cx="681" cy="112" r="5" fill="currentColor" />
+          <path class="not-found__line not-found__line--branch" d="M464.5 235H307V202H206V235H105V150H1" stroke="currentColor" pathLength="1" />
+          <circle class="not-found__dot" cx="465" cy="235" r="5" fill="currentColor" />
+          <path class="not-found__bar" d="M105 235L166 235L152 249H91L105 235ZM173 235H186L172 249H159L173 235ZM193 235H206L192 249H179L193 235Z" fill="currentColor" />
+          <path class="not-found__line not-found__line--branch" d="M898 235H1055.5V202H1156.5V235H1257.5V150H1361.5" stroke="currentColor" pathLength="1" />
+          <circle class="not-found__dot" cx="898" cy="235" r="5" fill="currentColor" />
+          <path class="not-found__bar" d="M1157 235L1218 235L1204 249H1143L1157 235ZM1225 235H1238L1224 249H1211L1225 235ZM1245 235H1258L1244 249H1231L1245 235Z" fill="currentColor" />
+        </svg>
+
+        <div class="not-found__body">
+          <h1 class="not-found__title">Ой! Страница не&nbsp;найдена</h1>
+          <p class="not-found__text">Похоже, вы перешли по&nbsp;несуществующей ссылке или страница была удалена</p>
+          <a class="not-found__button button button--accent" href="index.html">Вернуться на главную</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+@@include('sections/footer.html')
+@@include('scripts.html')
