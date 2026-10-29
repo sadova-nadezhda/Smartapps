@@ -45,9 +45,15 @@
     &--bottom {
       display: flex;
       align-items: center;
-      padding-block: s(14);
+      padding-block: s(16);
       font-size: s(14);
       color: var(--color-text-muted);
+
+      @include mobile {
+        &:not(.footer__cell--copyright) {
+          padding-top: 0;
+        }
+      }
     }
   }
 
@@ -71,10 +77,10 @@
   }
 
   &__label {
-    margin-bottom: s(14);
+    margin-bottom: s(20);
     font-size: s(14);
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1;
     text-transform: uppercase;
     color: var(--color-text-muted);
   }
@@ -82,7 +88,7 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: s(12);
+    gap: s(16);
   }
 
   &__link {
@@ -121,17 +127,21 @@
 
   &__city {
     flex: none;
-    padding: s(10) s(16);
+    padding: s(10) s(20);
     font-size: s(14);
     font-weight: 500;
     line-height: 1;
     border-bottom: 1px solid var(--color-line);
+    @include mobile {
+      padding: s(10) s(16);
+    }
   }
 
   &__office {
     display: grid;
-    grid-template-columns: s(138) 1fr;
-    padding: s(20) s(12) s(20) s(20);
+    grid-template-columns: s(120) 1fr;
+    gap: s(16);
+    padding: s(20);
   }
 
   &__address {
@@ -209,7 +219,7 @@
         order: 3;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: none;
-        gap: s(12) s(32);
+        gap: s(16) s(32);
         padding: s(16);
         background: var(--color-bg);
       }
