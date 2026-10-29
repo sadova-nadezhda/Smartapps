@@ -13,8 +13,6 @@
   padding: s(40) s(40) 0;
   background: var(--color-bg);
   transition: box-shadow 0.3s;
-  // Выезд сверху при загрузке; backwards — после анимации translate снимается
-  // и не становится контейнером для fixed-панели меню
   animation: header-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s backwards;
 
   @include tablet {
@@ -374,7 +372,6 @@
     }
   }
 
-  // Обычные выпадашки: текст по левому краю пункта, ширина — по пункту
   &__dropdown:not(&__dropdown--mega) &__sublink {
     @include desktop {
       padding-inline: s(14) s(12);
