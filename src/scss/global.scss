@@ -61,6 +61,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   font: 400 s(16)/1.2 var(--font-main);
+  font-variant-numeric: lining-nums proportional-nums;
   text-rendering: optimizeSpeed;
   overflow-x: hidden;
   overflow-x: clip;

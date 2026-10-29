@@ -34,9 +34,16 @@
     top: s(10);
     right: s(10);
     bottom: calc(var(--cut) + #{s(10)});
+    box-sizing: border-box;
     width: s(16);
-    border: 1px solid var(--color-line);
-    background-image: repeating-linear-gradient(-45deg, var(--color-line) 0 1px, transparent 1px s(8));
+    // Вертикальный ряд контурных параллелограммов (как .services__info-hatch, повёрнутый):
+    // полосы цвета линии, поверх — те же полосы цвета фона, уже на 1px и обрезанные на 1px слева/справа
+    padding-inline: 1px;
+    background-image:
+      repeating-linear-gradient(-30deg, transparent 0 1px, var(--color-surface) 1px calc(#{s(9)} - 1px), transparent calc(#{s(9)} - 1px) s(14)),
+      repeating-linear-gradient(-30deg, var(--color-line) 0 s(9), transparent s(9) s(14));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 
     @include mobile {
       top: s(8);

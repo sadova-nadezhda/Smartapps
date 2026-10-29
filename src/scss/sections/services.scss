@@ -181,10 +181,17 @@
   }
 
   &__info-hatch {
+    // Штриховка как у .service-card__hatch, но контуром: полосы цвета линии,
+    // поверх — те же полосы цвета фона, уже на 1px с боков и обрезанные на 1px сверху/снизу
     display: block;
-    height: s(18);
-    border-block: 1px solid var(--color-line);
-    background-image: repeating-linear-gradient(-60deg, var(--color-line) 0 1px, transparent 1px s(8), var(--color-line) s(8) calc(#{s(8)} + 1px), transparent calc(#{s(8)} + 1px) s(12));
+    box-sizing: border-box;
+    height: s(16);
+    padding-block: 1px;
+    background-image:
+      repeating-linear-gradient(-60deg, transparent 0 1px, var(--color-surface) 1px calc(#{s(9)} - 1px), transparent calc(#{s(9)} - 1px) s(14)),
+      repeating-linear-gradient(-60deg, var(--color-line) 0 s(9), transparent s(9) s(14));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 
     @include mobile {
       height: s(14);
@@ -726,7 +733,8 @@
 }
 
 .services-node,
-.services__cta {
+.services__cta,
+.services__info {
   &::before,
   .services__brackets {
     transition: background-color 0.6s var(--color-delay, 0.5s), color 0.6s var(--color-delay, 0.5s);
@@ -739,7 +747,8 @@
 
 .services.is-ready {
   .services-node,
-  .services__cta {
+  .services__cta,
+  .services__info {
     &::before {
       background-color: var(--color-accent);
     }

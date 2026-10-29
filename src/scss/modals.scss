@@ -57,7 +57,7 @@
     position: relative;
     min-height: 0;
     overflow-y: auto;
-    padding: s(30) s(32) s(32);
+    padding: s(32);
     background: var(--modal-bg);
     clip-path: chamfer(calc(var(--modal-cut) - 0.41px));
     overscroll-behavior: contain;
@@ -69,24 +69,25 @@
 
   &__close {
     position: absolute;
-    top: s(33);
-    right: s(33);
+    top: s(32);
+    right: s(32);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: s(32);
-    height: s(32);
+    width: s(24);
+    height: s(24);
+    padding: 0;
     color: var(--modal-border);
     transition: color 0.3s;
 
     @include mobile {
-      top: s(20);
-      right: s(12);
+      top: s(24);
+      right: s(16);
     }
 
     svg {
-      width: s(12);
-      height: s(12);
+      width: 100%;
+      height: 100%;
       fill: none;
       stroke: currentColor;
       stroke-width: 1.2;

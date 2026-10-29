@@ -196,7 +196,7 @@
   &__stat {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     min-height: s(97);
     padding-left: s(20);
     border-left: 1px solid var(--color-line);
@@ -209,6 +209,7 @@
 
   &__stat-value {
     font: 600 s(54)/1 var(--font-main);
+    font-variant-numeric: lining-nums proportional-nums;
   }
 
   &__stat-label {
