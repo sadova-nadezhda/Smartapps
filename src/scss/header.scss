@@ -12,12 +12,16 @@
   z-index: 100;
   padding: s(40) s(40) 0;
   background: var(--color-bg);
-  transition: box-shadow 0.3s;
+  transition: padding 0.3s;
   animation: header-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s backwards;
+
+  &.scrolled {
+    padding-top: s(16);
+  }
 
   @include tablet {
     --header-h: #{s(56)};
-    --header-gap: #{s(20)};
+    --header-gap: #{s(16)};
 
     padding: var(--header-gap) var(--header-gap) 0;
   }
