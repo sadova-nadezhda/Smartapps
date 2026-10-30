@@ -1,0 +1,47 @@
+<section class="vacancy-form section-pad-bottom" id="vacancy-form" aria-labelledby="vacancy-form-title">
+  <div class="vacancy-form__container container">
+    <div class="vacancy-form__body" data-reveal>
+      <span class="brackets" aria-hidden="true"></span>
+
+      <div class="vacancy-form__panel">
+        <form class="form vacancy-form__inner" enctype="multipart/form-data">
+          <div class="vacancy-form__intro">
+            <h2 class="vacancy-form__title" id="vacancy-form-title">Не нашли подходящую вакансию?</h2>
+            <p class="vacancy-form__text">Отправьте резюме — мы рассмотрим ваш опыт и&nbsp;свяжемся, если появится подходящая позиция.</p>
+
+            <div class="vacancy-form__upload" data-upload data-upload-max="10">
+              <input class="vacancy-form__upload-input" type="file" name="resume" accept=".pdf,.doc,.docx" aria-label="Прикрепить резюме" aria-describedby="vacancy-form-hint" required>
+              <span class="vacancy-form__upload-icon">@@include('../img/icons/clip.svg')</span>
+              <span class="vacancy-form__upload-title"><span data-upload-title>Прикрепить резюме</span><span class="form__req">*</span></span>
+              <span class="vacancy-form__upload-hint" id="vacancy-form-hint" data-upload-hint aria-live="polite">PDF, DOC или DOCX до 10 МБ</span>
+              <button class="vacancy-form__upload-remove" type="button" aria-label="Удалить файл" data-upload-remove hidden>
+                <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1 1l10 10M11 1 1 11" /></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="vacancy-form__fields">
+            <label class="form__field">
+              <span class="form__label">ФИО<span class="form__req">*</span></span>
+              <input class="form__input" type="text" name="name" placeholder="Введите ваше имя" autocomplete="name" required>
+            </label>
+            <label class="form__field">
+              <span class="form__label">Номер телефона<span class="form__req">*</span></span>
+              <input class="form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" data-mask="+7 (___) ___-__-__" autocomplete="tel" required>
+            </label>
+            <label class="form__field">
+              <span class="form__label">E-mail<span class="form__req">*</span></span>
+              <input class="form__input" type="email" name="email" placeholder="mail@example.com" autocomplete="email" required>
+            </label>
+            <label class="form__field">
+              <span class="form__label">Желаемая позиция</span>
+              <input class="form__input" type="text" name="position" placeholder="Например: DevOps-инженер" autocomplete="organization-title">
+            </label>
+            @@include('form-consent.html')
+            <button class="button button--accent form__btn" type="submit">Отправить заявку</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

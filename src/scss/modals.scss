@@ -14,18 +14,9 @@
   transition: opacity 0.3s;
 }
 
-@function chamfer($c) {
-  @return polygon(
-    $c 0, calc(100% - #{$c}) 0, 100% $c, 100% calc(100% - #{$c}),
-    calc(100% - #{$c}) 100%, $c 100%, 0 calc(100% - #{$c}), 0 $c
-  );
-}
-
 .modal {
   --modal-bg: #212121;
-  --modal-field: #2D2D2D;
   --modal-border: var(--color-grey);
-  --modal-muted: #909090;
   --modal-cut: #{s(30)};
 
   position: relative;
@@ -40,9 +31,7 @@
 
   :root[data-theme="light"] & {
     --modal-bg: var(--color-bg);
-    --modal-field: #FFFFFF;
     --modal-border: var(--color-line);
-    --modal-muted: #6B6B6B;
   }
 
   &.open {
@@ -114,119 +103,7 @@
   }
 
   &__form {
-    display: grid;
-    gap: s(20);
     margin-top: s(20);
-  }
-
-  &__field {
-    display: grid;
-    gap: s(10);
-  }
-
-  &__label {
-    color: var(--modal-muted);
-    font-size: s(14);
-    font-weight: 500;
-    text-transform: uppercase;
-  }
-
-  &__req {
-    font-size: 0.7em;
-    vertical-align: super;
-    line-height: 0;
-  }
-
-  &__input {
-    width: 100%;
-    height: s(46);
-    padding: 0 s(16);
-    color: var(--color-text);
-    background: var(--modal-field);
-    border: 1px solid var(--modal-border);
-    font-size: s(14);
-    cursor: text;
-    transition: border-color 0.3s;
-
-    &::placeholder {
-      color: var(--color-text);
-      opacity: 1;
-    }
-
-    &:focus {
-      border-color: var(--modal-muted);
-      outline: none;
-    }
-
-    &--area {
-      display: block;
-      height: s(88);
-      padding-block: s(14);
-      resize: none;
-    }
-  }
-
-  &__check {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: s(12);
-    font-size: s(16);
-    cursor: pointer;
-
-    @include mobile {
-      font-size: s(14);
-    }
-  }
-
-  &__check-input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-  }
-
-  &__check-box {
-    position: relative;
-    flex-shrink: 0;
-    width: s(20);
-    height: s(20);
-    background: var(--modal-field);
-    border: 1px solid var(--modal-border);
-
-    // Галочка
-    &::after {
-      content: "";
-      position: absolute;
-      top: 42%;
-      left: 50%;
-      width: s(9);
-      height: s(5);
-      border-bottom: 1px solid var(--color-text);
-      border-left: 1px solid var(--color-text);
-      opacity: 0;
-      transform: translate(-50%, -50%) rotate(-45deg);
-      transition: opacity 0.2s;
-    }
-  }
-
-  &__check-input:checked + &__check-box::after {
-    opacity: 1;
-  }
-
-  &__check-input:focus-visible + &__check-box {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-  }
-
-  &__btn {
-    justify-self: start;
-    min-width: s(292);
-    margin-top: s(20);
-
-    @include mobile {
-      min-width: 0;
-    }
   }
 
   &__text + &__btn {

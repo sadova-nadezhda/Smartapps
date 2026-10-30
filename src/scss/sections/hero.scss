@@ -141,6 +141,9 @@
   &__btn {
     @include mobile {
       order: 1;
+      align-self: stretch;
+      width: auto;
+      margin: 0 s(-16);
       margin-top: auto;
     }
   }

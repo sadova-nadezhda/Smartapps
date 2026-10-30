@@ -1,0 +1,200 @@
+@use "../functions" as *;
+
+// ======================
+// Не нашли подходящую вакансию
+// ======================
+.vacancy-form {
+  &__body {
+    position: relative;
+    margin: s(12);
+
+    @include mobile {
+      margin: s(8);
+    }
+
+    .brackets {
+      --bracket-gap: #{s(12)};
+      --bracket-len: #{s(18)};
+
+      transition: color 0.6s var(--tag-color-delay, 0.8s);
+
+      @include mobile {
+        --bracket-gap: #{s(8)};
+        --bracket-len: #{s(12)};
+      }
+    }
+
+    &.is-revealed .brackets {
+      color: var(--color-accent);
+    }
+  }
+
+  &__panel {
+    --cut: #{s(30)};
+
+    @include chamfer-frame(".vacancy-form__inner");
+
+    @include mobile {
+      --cut: #{s(20)};
+    }
+  }
+
+  &__inner {
+    grid-template-columns: repeat(2, 1fr);
+    padding: s(32);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+    @include mobile {
+      padding: s(24) s(16) s(28);
+    }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__text {
+    max-width: s(540);
+    margin-top: s(14);
+    font-size: s(18);
+
+    @include mobile {
+      margin-top: s(12);
+      font-size: s(16);
+    }
+  }
+
+  &__upload {
+    --dash-color: var(--form-border);
+    --dash-x: repeating-linear-gradient(90deg, var(--dash-color) 0 #{s(8)}, transparent #{s(8)} #{s(13)});
+    --dash-y: repeating-linear-gradient(0deg, var(--dash-color) 0 #{s(8)}, transparent #{s(8)} #{s(13)});
+
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: s(200);
+    margin-top: s(32);
+    padding: s(24) s(16);
+    background:
+      var(--dash-x) left top / 100% 1px no-repeat,
+      var(--dash-x) left bottom / 100% 1px no-repeat,
+      var(--dash-y) left top / 1px 100% no-repeat,
+      var(--dash-y) right top / 1px 100% no-repeat,
+      var(--form-field);
+    text-align: center;
+
+    @include mobile {
+      margin-top: s(24);
+    }
+
+    &:has(:focus-visible) {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    &.is-drag,
+    &.is-error {
+      --dash-color: var(--color-accent);
+    }
+
+    &.is-filled .form__req {
+      display: none;
+    }
+  }
+
+  &__upload-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__upload-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: s(46);
+    height: s(46);
+    color: var(--color-accent);
+    pointer-events: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background-color: currentColor;
+      opacity: 0.2;
+    }
+
+    svg {
+      position: relative;
+      width: s(22);
+      height: s(22);
+    }
+  }
+
+  &__upload-title {
+    margin-top: s(20);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+    pointer-events: none;
+  }
+
+  &__upload-hint {
+    margin-top: s(12);
+    font-size: s(14);
+    pointer-events: none;
+  }
+
+  &__upload.is-error &__upload-hint {
+    color: var(--color-accent);
+  }
+
+  &__upload-remove {
+    position: absolute;
+    top: s(12);
+    right: s(12);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: s(24);
+    height: s(24);
+    padding: 0;
+    color: var(--form-border);
+    transition: color 0.3s;
+
+    svg {
+      width: s(14);
+      height: s(14);
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.2;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-text);
+      }
+    }
+  }
+
+  &__fields {
+    display: grid;
+    align-content: start;
+    gap: s(20);
+    min-width: 0;
+  }
+}

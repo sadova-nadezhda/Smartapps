@@ -1,0 +1,54 @@
+<section class="contacts section-pad-bottom" id="contacts" aria-labelledby="contacts-title">
+  <div class="contacts__container container">
+    <div class="contacts__head">
+      <div class="tag contacts__tag"><span class="tag__text">Контакты</span></div>
+      <h2 class="contacts__title" id="contacts-title" data-reveal>Свяжитесь с нами удобным способом или оставьте заявку на&nbsp;консультацию</h2>
+
+      <div class="contacts__city" data-reveal="fade">
+        <button class="contacts__city-toggle" type="button" aria-expanded="false" aria-controls="contacts-cities" aria-label="Выбрать город">
+          <span class="contacts__city-current">Астана</span>
+          <svg class="contacts__city-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg>
+        </button>
+        <ul class="contacts__city-list" id="contacts-cities" hidden>
+          <li><button class="contacts__city-option" type="button" data-city="astana" aria-pressed="true">Астана</button></li>
+          <li><button class="contacts__city-option" type="button" data-city="almaty" aria-pressed="false">Алматы</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contacts__body">
+      <span class="brackets" aria-hidden="true"></span>
+
+      <div class="contacts__panel contacts__panel--info">
+        <div class="contacts__panel-inner">
+          @@include('sections/contacts-office.html', {
+            "id": "astana",
+            "city": "Астана",
+            "address": "Казахстан, г. Астана, ул. Айтматова 29, НП-1",
+            "phone1": "+7 (7172) 642-642",
+            "phone1Href": "+77172642642",
+            "phone2": "+7 (778) 870 16 42",
+            "phone2Href": "+77788701642",
+            "map": "https://yandex.kz/map-widget/v1/?text=Астана%2C%20улица%20Чингиза%20Айтматова%2C%2029&z=16"
+          })
+          @@include('sections/contacts-office.html', {
+            "id": "almaty",
+            "city": "Алматы",
+            "address": "Казахстан, г. Алматы, ул. Бальзака 8, лит Д",
+            "phone1": "+7 (727) 357 36 56",
+            "phone1Href": "+77273573656",
+            "phone2": "+7 (778) 870 16 42",
+            "phone2Href": "+77788701642",
+            "map": "https://yandex.kz/map-widget/v1/?text=Алматы%2C%20улица%20Бальзака%2C%208&z=16"
+          })
+        </div>
+      </div>
+
+      <div class="contacts__panel contacts__panel--form">
+        <div class="contacts__panel-inner">
+          @@include('form.html', { "class": "contacts__form", "topic": "Контакты" })
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

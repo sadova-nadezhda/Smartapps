@@ -1,0 +1,49 @@
+<section class="team section-pad-bottom section-hidden" id="team" aria-labelledby="team-title">
+  <div class="team__container container">
+    <div class="team__head">
+      <div class="tag team__tag"><span class="tag__text">Команда</span></div>
+      <h2 class="team__title" id="team-title" data-reveal>Ядро команды SmartApps</h2>
+
+      <div class="team__nav" data-reveal="fade">
+        <button class="slider-arrow slider-arrow--filled team__arrow team__arrow--prev" type="button" aria-label="Предыдущий сотрудник">
+          <svg class="slider-arrow__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 7l-5 5 5 5" /></svg>
+        </button>
+        <button class="slider-arrow slider-arrow--filled team__arrow team__arrow--next" type="button" aria-label="Следующий сотрудник">
+          <svg class="slider-arrow__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 7l5 5-5 5" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="team__slider swiper" aria-label="Команда">
+      <div class="team__list swiper-wrapper" data-reveal-stagger="right">
+        <div class="team__slide swiper-slide">
+          @@include('sections/team-card.html', { "img": "img/team/kadraliev.png", "name": "Кадралиев Джанибек", "role": "Генеральный директор" })
+        </div>
+        <div class="team__slide swiper-slide">
+          @@include('sections/team-card.html', { "img": "img/team/krivtsov.png", "name": "Кривцов Николай", "role": "Технический директор" })
+        </div>
+        <div class="team__slide swiper-slide">
+          @@include('sections/team-card.html', { "img": "img/team/akhmetova.png", "name": "Ахметова Асель", "role": "Финансовый директор" })
+        </div>
+        <div class="team__slide swiper-slide">
+          @@include('sections/team-card.html', { "img": "img/team/pak.png", "name": "Пак Владимир", "role": "Коммерческий директор" })
+        </div>
+        <div class="team__slide swiper-slide">
+          @@include('sections/team-card.html', { "img": "img/team/tsoy.png", "name": "Цой Нелля", "role": "Директор информационных технологий" })
+        </div>
+        <div class="team__slide swiper-slide">
+          @@include('sections/team-card.html', { "img": "img/team/zhangulov.png", "name": "Жангулов Нурсултан", "role": "Руководитель продаж" })
+        </div>
+        <div class="team__slide swiper-slide">
+          @@include('sections/team-card.html', { "img": "img/team/mugalbaeva.png", "name": "Мугалбаева Гульжанар", "role": "Руководитель HR-отдела" })
+        </div>
+        <div class="team__slide swiper-slide">
+          @@include('sections/team-card.html', { "img": "img/team/omirbekova.png", "name": "Омирбекова Жансая", "role": "Руководитель направления разработки" })
+        </div>
+        <div class="team__slide swiper-slide">
+          @@include('sections/team-card.html', { "img": "img/team/nurakhmetov.png", "name": "Нурахметов Айдын", "role": "Архитектор облачных решений" })
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

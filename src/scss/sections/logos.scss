@@ -1,9 +1,11 @@
 @use "../functions" as *;
 
 // ======================
-// Нам доверяют: плашка + бегущая строка логотипов
+// Логотипы: бегущая строка
 // ======================
-.clients {
+.logos {
+  --logos-gap: #{s(32)};
+
   &__container {
     display: flex;
     align-items: center;
@@ -13,6 +15,14 @@
       flex-direction: column;
       align-items: flex-start;
       gap: s(24);
+    }
+  }
+
+  &--offset &__container {
+    @include desktop {
+      display: grid;
+      grid-template-columns: s(460) minmax(0, 1fr);
+      gap: 0;
     }
   }
 
@@ -38,7 +48,7 @@
   }
 
   &__marquee.is-running &__track {
-    animation: clients-marquee var(--marquee-duration, 30s) linear infinite;
+    animation: logos-marquee var(--marquee-duration, 30s) linear infinite;
 
     @media (prefers-reduced-motion: reduce) {
       animation: none;
@@ -49,20 +59,15 @@
     display: flex;
     flex-shrink: 0;
     align-items: center;
-    gap: s(48);
-    padding-right: s(48);
-
-    @include mobile {
-      gap: s(28);
-      padding-right: s(28);
-    }
+    gap: var(--logos-gap);
+    padding-right: var(--logos-gap);
   }
 
   &__item {
     flex-shrink: 0;
   }
 
-  &__logo {
+  &__img {
     display: block;
     width: auto;
     height: calc(var(--width-multiplier) * var(--h, 40));
@@ -73,7 +78,7 @@
   }
 }
 
-@keyframes clients-marquee {
+@keyframes logos-marquee {
   to {
     transform: translateX(-50%);
   }

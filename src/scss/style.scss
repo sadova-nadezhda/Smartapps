@@ -4,6 +4,7 @@
 @use "global";
 @use "header";
 @use "modals";
+@use "form";
 @use "reveal";
 
 // Глобальные секции
@@ -17,7 +18,11 @@
 @use "sections/about";
 @use "sections/reasons";
 @use "sections/history";
-@use "sections/clients";
+@use "sections/team";
+@use "sections/contacts";
+@use "sections/vacancies";
+@use "sections/vacancy-form";
+@use "sections/logos";
 @use "sections/services";
 @use "sections/project-card";
 @use "sections/projects";

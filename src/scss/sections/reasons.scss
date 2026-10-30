@@ -46,9 +46,17 @@
     }
   }
 
+  &:has(.reasons__tag.is-ready) &__num::before {
+    color: var(--color-accent);
+  }
+
+  &:has(.reasons__tag.is-ready) &__badge::before {
+    background-color: var(--color-accent);
+  }
+
   &__num {
     --bracket-len: #{s(16)};
-    --bracket-line: linear-gradient(var(--color-line), var(--color-line));
+    --bracket-line: linear-gradient(currentColor, currentColor);
 
     position: relative;
     flex-shrink: 0;
@@ -72,7 +80,9 @@
         var(--bracket-line) right bottom / var(--bracket-len) 1px,
         var(--bracket-line) right bottom / 1px var(--bracket-len);
       background-repeat: no-repeat;
+      color: var(--color-line);
       pointer-events: none;
+      transition: color 0.6s var(--tag-color-delay, 0.8s);
     }
   }
 
@@ -80,6 +90,10 @@
     --cut: #{s(30)};
 
     @include cut-frame;
+
+    &::before {
+      transition: background-color 0.6s var(--tag-color-delay, 0.8s);
+    }
 
     display: flex;
     align-items: center;

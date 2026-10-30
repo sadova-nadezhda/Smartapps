@@ -1,0 +1,256 @@
+@use "../functions" as *;
+
+// ======================
+// Контакты
+// ======================
+.contacts {
+  &__head {
+    display: grid;
+    grid-template-columns: s(460) 1fr auto;
+    align-items: start;
+    margin-bottom: s(28);
+
+    @include tablet {
+      grid-template-columns: 1fr auto;
+      gap: s(24);
+    }
+
+    @include mobile {
+      gap: s(16);
+      margin-bottom: s(20);
+    }
+  }
+
+  &__title {
+    max-width: s(640);
+
+    @include tablet {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+  }
+
+  &__city {
+    position: relative;
+    z-index: 2;
+
+    @include mobile {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+  }
+
+  &__city-toggle {
+    display: flex;
+    align-items: center;
+    gap: s(6);
+    height: s(37);
+    padding: 0 s(12) 0 s(20);
+    border: 1px solid var(--color-text);
+    font-size: s(16);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+
+    @include mobile {
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &:hover,
+    &[aria-expanded="true"] {
+      background-color: var(--color-surface);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  }
+
+  &__city-arrow {
+    width: s(18);
+    height: s(18);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    transition: transform 0.3s;
+  }
+
+  &__city-toggle[aria-expanded="true"] &__city-arrow {
+    transform: rotate(180deg);
+  }
+
+  &__city-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 100%;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-line);
+  }
+
+  &__city-option {
+    width: 100%;
+    min-height: s(48);
+    padding: s(12) s(20);
+    border-bottom: 1px solid var(--color-line);
+    font-size: s(16);
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+
+    &[aria-pressed="true"],
+    &:hover,
+    &:focus-visible {
+      color: #FFFFFF;
+      background-color: var(--color-accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-text);
+      outline-offset: -2px;
+    }
+  }
+
+  li:last-child &__city-option {
+    border-bottom: none;
+  }
+
+  &:has(.contacts__tag.is-ready) &__body .brackets {
+    color: var(--color-accent);
+  }
+
+  &__body {
+    position: relative;
+    display: grid;
+    grid-template-columns: s(544) 1fr;
+    gap: s(20);
+    margin: s(12);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+    @include mobile {
+      gap: s(16);
+      margin: s(8);
+    }
+
+    .brackets {
+      --bracket-gap: #{s(12)};
+      --bracket-len: #{s(18)};
+
+      transition: color 0.6s var(--tag-color-delay, 0.8s);
+
+      @include mobile {
+        --bracket-gap: #{s(8)};
+        --bracket-len: #{s(12)};
+      }
+    }
+  }
+
+  &__panel {
+    --cut: #{s(30)};
+
+    @include chamfer-frame(".contacts__panel-inner");
+
+    @include mobile {
+      --cut: #{s(20)};
+    }
+  }
+
+  &__panel--form &__panel-inner {
+    padding: s(32);
+
+    @include mobile {
+      padding: s(24) s(16) s(28);
+    }
+  }
+
+  &__office {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__details {
+    display: grid;
+    gap: s(24);
+    padding: s(32);
+
+    @include mobile {
+      gap: s(20);
+      padding: s(24) s(16);
+    }
+  }
+
+  &__item {
+    display: grid;
+    align-content: start;
+    gap: s(8);
+  }
+
+  &__label {
+    color: var(--color-text-muted);
+    font-size: s(14);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__value {
+    font-size: s(16);
+    font-style: normal;
+    line-height: 1.2;
+  }
+
+  &__muted {
+    color: var(--color-text-muted);
+  }
+
+  &__time {
+    white-space: nowrap;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: s(24) s(32);
+
+    @include mobile {
+      flex-direction: column;
+      gap: s(20);
+    }
+
+    &--phones {
+      @include mobile {
+        gap: s(8);
+      }
+    }
+  }
+
+  &__link {
+    transition: color 0.3s;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &__map {
+    display: block;
+    flex-grow: 1;
+    width: 100%;
+    min-height: s(267);
+    border: 0;
+    border-top: 1px solid var(--color-line);
+    filter: grayscale(1) invert(0.9);
+
+    :root[data-theme="light"] & {
+      filter: grayscale(1);
+    }
+  }
+}

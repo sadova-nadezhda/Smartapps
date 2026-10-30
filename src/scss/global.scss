@@ -206,10 +206,11 @@ input:focus-visible {
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 
   @include mobile {
     width: 100%;
+    font-size: s(12);
   }
 
   &--accent {
@@ -219,6 +220,19 @@ input:focus-visible {
     @media (hover: hover) {
       &:hover {
         background-color: var(--color-red-dark);
+      }
+    }
+  }
+
+  &--outline {
+    border: 1px solid var(--color-line);
+    color: var(--color-text);
+    transition: border-color 0.3s, color 0.3s;
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--color-text);
+        background-color: rgba(255, 255, 255, 0.03);
       }
     }
   }
@@ -306,8 +320,9 @@ input:focus-visible {
   &__text {
     display: flex;
     align-items: center;
+    justify-content: center;
     min-width: s(255);
-    padding-inline: s(80);
+    padding-inline: s(40);
     color: #FFFFFF;
     background-color: var(--color-line);
     clip-path: polygon(var(--tag-slant) 0, 100% 0, calc(100% - var(--tag-slant)) 100%, 0 100%);
@@ -324,7 +339,6 @@ input:focus-visible {
 
     @include mobile {
       min-width: s(240);
-      padding-inline: s(40);
     }
   }
 
@@ -392,17 +406,18 @@ input:focus-visible {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: s(44);
-  height: s(44);
+  width: s(46);
+  height: s(46);
   padding: 0;
   border: 1px solid var(--color-line);
   border-radius: 50%;
   color: var(--color-text);
-  transition: border-color 0.3s, opacity 0.3s;
+  transition: border-color 0.3s, color 0.3s, opacity 0.3s;
 
   @media (hover: hover) {
     &:hover:not(:disabled) {
-      border-color: var(--color-text);
+      border-color: var(--color-accent);
+      color: var(--color-accent);
     }
   }
 
@@ -423,6 +438,43 @@ input:focus-visible {
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
+  }
+}
+
+.brackets {
+  --bracket-gap: #{s(13)};
+  --bracket-len: #{s(12)};
+  --bracket-line: linear-gradient(currentColor, currentColor);
+
+  color: var(--color-line);
+
+  position: absolute;
+  inset: calc(var(--bracket-gap) * -1);
+  z-index: 0;
+  background:
+    var(--bracket-line) left top / var(--bracket-len) 1px,
+    var(--bracket-line) left top / 1px var(--bracket-len),
+    var(--bracket-line) right top / var(--bracket-len) 1px,
+    var(--bracket-line) right top / 1px var(--bracket-len),
+    var(--bracket-line) left bottom / var(--bracket-len) 1px,
+    var(--bracket-line) left bottom / 1px var(--bracket-len),
+    var(--bracket-line) right bottom / var(--bracket-len) 1px,
+    var(--bracket-line) right bottom / 1px var(--bracket-len);
+  background-repeat: no-repeat;
+  pointer-events: none;
+
+  @include mobile {
+    --bracket-gap: #{s(8)};
+    --bracket-len: #{s(8)};
+  }
+
+  &--diagonal {
+    background:
+      var(--bracket-line) left top / var(--bracket-len) 1px,
+      var(--bracket-line) left top / 1px var(--bracket-len),
+      var(--bracket-line) right bottom / var(--bracket-len) 1px,
+      var(--bracket-line) right bottom / 1px var(--bracket-len);
+    background-repeat: no-repeat;
   }
 }
 

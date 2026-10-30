@@ -1,0 +1,195 @@
+@use "../functions" as *;
+
+// ======================
+// Открытые вакансии
+// ======================
+.vacancies {
+  &__container {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__head {
+    display: grid;
+    grid-template-columns: s(460) 1fr auto;
+    align-items: center;
+    margin-bottom: s(28);
+
+    @include tablet {
+      grid-template-columns: 1fr auto;
+      gap: s(24);
+    }
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  &__title {
+    @include tablet {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+
+    @include mobile {
+      margin-top: s(16);
+    }
+  }
+
+  &__all {
+    @include mobile {
+      order: 1;
+      margin-top: s(16);
+    }
+  }
+
+  &:has(.vacancies__tag.is-ready) .vacancy-card .brackets {
+    color: var(--color-accent);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: s(20);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: s(8);
+    }
+
+    @include mobile {
+      margin-top: s(12);
+    }
+  }
+
+  &__item {
+    padding: s(12);
+
+    @include mobile {
+      padding: s(8);
+    }
+  }
+}
+
+// ======================
+// Карточка вакансии
+// ======================
+.vacancy-card {
+  --cut: #{s(30)};
+
+  @include cut-frame;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: s(28) s(32) s(28) s(20);
+
+  @include mobile {
+    --cut: #{s(20)};
+
+    padding: s(24) s(16);
+  }
+
+  &::before {
+    transition: background-color 0.3s;
+  }
+
+  &:has(.vacancy-card__link:focus-visible) {
+    --color-line: var(--color-accent);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      --color-line: var(--color-accent);
+    }
+  }
+
+  .brackets {
+    --bracket-gap: #{s(12)};
+    --bracket-len: #{s(18)};
+
+    transition: color 0.6s var(--tag-color-delay, 0.8s);
+
+    @include mobile {
+      --bracket-gap: #{s(8)};
+      --bracket-len: #{s(12)};
+    }
+  }
+
+  &__title {
+    font: 600 s(20)/1.1 var(--font-main);
+
+    @include mobile {
+      font-size: s(18);
+    }
+  }
+
+  &__text {
+    margin-top: s(14);
+    font-size: s(16);
+
+    @include mobile {
+      margin-top: s(12);
+      font-size: s(14);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    gap: s(20);
+    margin-top: s(24);
+
+    @include mobile {
+      gap: s(16);
+      margin-top: s(20);
+    }
+  }
+
+  &__label {
+    color: var(--color-text-muted);
+    font-size: s(14);
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: s(12);
+    }
+  }
+
+  &__value {
+    margin-top: s(8);
+    font-size: s(16);
+
+    @include mobile {
+      font-size: s(14);
+    }
+  }
+
+  &__link {
+    position: static;
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: s(28);
+    font-size: s(16);
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: s(4);
+    outline: none;
+
+    @include mobile {
+      padding-top: s(28);
+      font-size: s(14);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+  }
+}

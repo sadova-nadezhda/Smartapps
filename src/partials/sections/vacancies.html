@@ -1,0 +1,41 @@
+<section class="vacancies section-pad-bottom" id="vacancies" aria-labelledby="vacancies-title">
+  <div class="vacancies__container container">
+    <div class="vacancies__head">
+      <div class="vacancies__tag-box">
+        <div class="tag vacancies__tag"><span class="tag__text">Открытые вакансии</span></div>
+      </div>
+      <h2 class="vacancies__title" id="vacancies-title" data-reveal>Станьте частью нашей команды</h2>
+      <a class="button button--outline vacancies__all" href="#" target="_blank" rel="noopener" data-reveal="fade">Все вакансии на hh.kz</a>
+    </div>
+
+    <ul class="vacancies__list" data-reveal-stagger data-reveal-step="120">
+      <li class="vacancies__item">
+        @@include('sections/vacancy-card.html', {
+          "title": "Системный администратор",
+          "text": "Администрирование серверной и виртуальной инфраструктуры, мониторинг систем и&nbsp;обеспечение их&nbsp;стабильной работы.",
+          "city": "Алматы",
+          "type": "Полная занятость",
+          "href": "#"
+        })
+      </li>
+      <li class="vacancies__item">
+        @@include('sections/vacancy-card.html', {
+          "title": "Инженер технической поддержки",
+          "text": "Сопровождение облачной инфраструктуры, обработка обращений клиентов и&nbsp;решение технических инцидентов.",
+          "city": "Астана, Алматы",
+          "type": "Полная занятость",
+          "href": "#"
+        })
+      </li>
+      <li class="vacancies__item">
+        @@include('sections/vacancy-card.html', {
+          "title": "Сетевой инженер",
+          "text": "Настройка и&nbsp;сопровождение сетевой инфраструктуры, обеспечение доступности и&nbsp;безопасности корпоративных сервисов.",
+          "city": "Астана",
+          "type": "Полная занятость",
+          "href": "#"
+        })
+      </li>
+    </ul>
+  </div>
+</section>

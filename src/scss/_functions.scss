@@ -12,6 +12,31 @@
 @mixin desktop { @media (min-width: 1025px) { @content; } }
 @mixin desktop-landscape { @media (min-width: 1025px) and (min-aspect-ratio: 5/4) { @content; } }
 
+// Срезы на всех четырёх углах
+@function chamfer($c) {
+  @return polygon(
+    $c 0, calc(100% - #{$c}) 0, 100% $c, 100% calc(100% - #{$c}),
+    calc(100% - #{$c}) 100%, $c 100%, 0 calc(100% - #{$c}), 0 $c
+  );
+}
+
+// Срезы на всех четырёх углах с рамкой. Размер среза — --cut у блока.
+// Блок — цвет рамки, вложенный слой $inner — фон с отступом --border.
+// В отличие от cut-frame обрезается и содержимое (карта, картинки)
+@mixin chamfer-frame($inner, $bg: var(--color-surface)) {
+  --border: 1px;
+
+  padding: var(--border);
+  background-color: var(--color-line);
+  clip-path: chamfer(var(--cut));
+
+  #{$inner} {
+    height: 100%;
+    background-color: $bg;
+    clip-path: chamfer(calc(var(--cut) - var(--border) * 0.586));
+  }
+}
+
 // Срезанные углы (верхний левый, нижний правый) с рамкой. Размер среза — --cut у блока.
 // Рамка — два слоя с одинаковым полигоном: ::before цвета рамки, ::after фон с отступом --border.
 // На диагонали ширина слоя меньше на (2 - √2) * --border, чтобы рамка была одной толщины
@@ -41,7 +66,8 @@
     clip-path: polygon(var(--cut-inner) 0, 100% 0, 100% calc(100% - var(--cut-inner)), calc(100% - var(--cut-inner)) 100%, 0 100%, 0 var(--cut-inner));
   }
 
-  > * {
+  // Уголки .brackets позиционируются сами (absolute)
+  > :not(.brackets) {
     position: relative;
     z-index: 1;
   }

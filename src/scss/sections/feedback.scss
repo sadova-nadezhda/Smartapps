@@ -23,7 +23,7 @@
     }
 
     @include mobile {
-      padding: s(48) s(16) s(64);
+      padding: s(64) s(16);
     }
   }
 
@@ -101,5 +101,13 @@
       margin-top: s(32);
       padding-inline: s(16);
     }
+  }
+
+  &--wide-btn &__text {
+    max-width: s(720);
+  }
+
+  &--wide-btn &__btn {
+    padding-inline: s(16);
   }
 }

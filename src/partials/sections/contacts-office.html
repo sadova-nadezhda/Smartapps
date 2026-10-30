@@ -1,0 +1,37 @@
+<div class="contacts__office" data-city="@@id">
+  <div class="contacts__details">
+    <div class="contacts__item">
+      <h3 class="contacts__label">Адрес офиса</h3>
+      <address class="contacts__value">@@address</address>
+    </div>
+
+    <div class="contacts__item">
+      <h3 class="contacts__label">Режим работы</h3>
+      <p class="contacts__value">
+        <span class="contacts__muted">Понедельник – Пятница:</span> <span class="contacts__time">09:00 – 18:00</span><br>
+        <span class="contacts__muted">Суббота – Воскресенье:</span> выходной
+      </p>
+    </div>
+
+    <div class="contacts__row">
+      <div class="contacts__item">
+        <h3 class="contacts__label">E-mail / техподдержка</h3>
+        <a class="contacts__value contacts__link" href="mailto:support@smartapps.kz">support@smartapps.kz</a>
+      </div>
+      <div class="contacts__item">
+        <h3 class="contacts__label">E-mail / отдел продаж</h3>
+        <a class="contacts__value contacts__link" href="mailto:info@smartapps.kz">info@smartapps.kz</a>
+      </div>
+    </div>
+
+    <div class="contacts__item">
+      <h3 class="contacts__label">Телефон</h3>
+      <div class="contacts__row contacts__row--phones">
+        <a class="contacts__value contacts__link" href="tel:@@phone1Href">@@phone1</a>
+        <a class="contacts__value contacts__link" href="tel:@@phone2Href">@@phone2</a>
+      </div>
+    </div>
+  </div>
+
+  <iframe class="contacts__map" src="@@map" title="Карта: офис в г. @@city" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+</div>
