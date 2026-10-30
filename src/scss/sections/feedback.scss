@@ -90,6 +90,10 @@
       margin-top: s(12);
       font-size: s(16);
     }
+
+    &:empty {
+      display: none;
+    }
   }
 
   &__btn {

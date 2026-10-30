@@ -1,0 +1,114 @@
+@use "functions" as *;
+
+// ======================
+// Выпадающий список
+// ======================
+.dropdown {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    gap: s(6);
+    height: s(37);
+    padding: 0 s(12) 0 s(20);
+    border: 1px solid var(--color-text);
+    font-size: s(16);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+
+    @include mobile {
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &:hover,
+    &[aria-expanded="true"] {
+      background-color: var(--color-surface);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  }
+
+  &__current {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: s(18);
+    height: s(18);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    transition: transform 0.3s;
+  }
+
+  &__toggle[aria-expanded="true"] &__arrow {
+    transform: rotate(180deg);
+  }
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 100%;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-line);
+  }
+
+  &__option {
+    width: 100%;
+    min-height: s(48);
+    padding: s(12) s(20);
+    border-bottom: 1px solid var(--color-line);
+    font-size: s(16);
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+
+    &[aria-pressed="true"],
+    &:hover,
+    &:focus-visible {
+      color: #FFFFFF;
+      background-color: var(--color-accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-text);
+      outline-offset: -2px;
+    }
+  }
+
+  li:last-child &__option {
+    border-bottom: none;
+  }
+
+  &--compact &__toggle {
+    gap: s(4);
+    height: s(38);
+    padding: 0 s(8) 0 s(12);
+    font-size: s(14);
+  }
+
+  &--compact &__option {
+    min-height: s(40);
+    padding: s(10) s(12);
+    font-size: s(14);
+    white-space: nowrap;
+
+    @include mobile {
+      white-space: normal;
+    }
+  }
+}

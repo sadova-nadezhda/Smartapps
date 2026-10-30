@@ -1,0 +1,100 @@
+@use "../functions" as *;
+
+// ======================
+// Каталог проектов
+// ======================
+.projects-catalog {
+  padding-top: s(40);
+
+  @include mobile {
+    padding-top: s(24);
+  }
+
+  &__head {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: s(12) s(24);
+    margin-bottom: s(40);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: s(16);
+      margin-bottom: s(24);
+    }
+  }
+
+  &__title {
+    font-size: s(32);
+
+    @include tablet {
+      font-size: s(28);
+    }
+
+    @include mobile {
+      font-size: s(24);
+    }
+  }
+
+  &__filters {
+    display: flex;
+    gap: s(15);
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: s(12);
+      grid-row: 3;
+    }
+  }
+
+  &__subtitle {
+    grid-column: 1 / -1;
+    max-width: s(800);
+    font-size: s(20);
+
+    @include mobile {
+      font-size: s(16);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: s(20);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: s(12);
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    color: var(--color-text-muted);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: s(40);
+
+    @include mobile {
+      margin-top: s(32);
+    }
+  }
+
+  &__more {
+    min-width: s(210);
+    border-color: var(--color-text);
+
+    @include mobile {
+      height: s(54);
+    }
+  }
+}

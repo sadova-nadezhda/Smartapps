@@ -1,0 +1,129 @@
+<section class="projects-catalog section-pad-bottom" aria-labelledby="projects-catalog-title">
+  <div class="projects-catalog__container container">
+    <div class="projects-catalog__head">
+      <h1 class="projects-catalog__title" id="projects-catalog-title" data-reveal>Наши проекты</h1>
+
+      <div class="projects-catalog__filters" role="group" aria-label="Фильтры проектов" data-reveal="fade">
+        <div class="dropdown dropdown--compact projects-catalog__filter" data-filter="industry">
+          <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="projects-industry">
+            <span class="dropdown__current">Отрасли</span>
+            <svg class="dropdown__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg>
+          </button>
+          <ul class="dropdown__list" id="projects-industry" hidden>
+            <li><button class="dropdown__option" type="button" data-value="" data-label="Отрасли" aria-pressed="true">Все отрасли</button></li>
+            <li><button class="dropdown__option" type="button" data-value="ИТ и сервисы" aria-pressed="false">ИТ и сервисы</button></li>
+            <li><button class="dropdown__option" type="button" data-value="Финансы и банки" aria-pressed="false">Финансы и банки</button></li>
+            <li><button class="dropdown__option" type="button" data-value="Госсектор" aria-pressed="false">Госсектор</button></li>
+          </ul>
+        </div>
+        <div class="dropdown dropdown--compact projects-catalog__filter" data-filter="direction">
+          <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="projects-direction">
+            <span class="dropdown__current">Направление</span>
+            <svg class="dropdown__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg>
+          </button>
+          <ul class="dropdown__list" id="projects-direction" hidden>
+            <li><button class="dropdown__option" type="button" data-value="" data-label="Направление" aria-pressed="true">Все направления</button></li>
+            <li><button class="dropdown__option" type="button" data-value="ИТ-сервис и поддержка" aria-pressed="false">ИТ-сервис и поддержка</button></li>
+            <li><button class="dropdown__option" type="button" data-value="Прикладное ПО / 1С / ERP" aria-pressed="false">Прикладное ПО / 1С / ERP</button></li>
+            <li><button class="dropdown__option" type="button" data-value="ИТ-инфраструктура" aria-pressed="false">ИТ-инфраструктура</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="projects-catalog__subtitle" data-reveal data-reveal-delay="150">Создаём, модернизируем и сопровождаем корпоративную ИТ-инфраструктуру — от анализа и проектирования до внедрения и дальнейшего развития</p>
+    </div>
+
+    <div class="projects-catalog__list" data-reveal-stagger>
+        @@include('sections/project-card.html', {
+          "title": "Центр мониторинга и эксплуатация ЦОД",
+          "text": "Снизить риск остановок ЦОД и обеспечить постоянный контроль состояния оборудования и инженерных систем.",
+          "industry": "ИТ и сервисы",
+          "direction": "ИТ-сервис и поддержка",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Интеллектуальная обработка документов",
+          "text": "Автоматизировать обработку сканов и PDF, чтобы заявки проходили быстрее и с минимальным количеством ошибок ручного ввода.",
+          "industry": "Финансы и банки",
+          "direction": "Прикладное ПО / 1С / ERP",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Модернизация ИТ-инфраструктуры государственного института развития",
+          "text": "Повысить управляемость и отказоустойчивость инфраструктуры государственного института развития с учётом широкой филиальной сети.",
+          "industry": "Госсектор",
+          "direction": "ИТ-инфраструктура",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Центр мониторинга и эксплуатация ЦОД",
+          "text": "Снизить риск остановок ЦОД и обеспечить постоянный контроль состояния оборудования и инженерных систем.",
+          "industry": "ИТ и сервисы",
+          "direction": "ИТ-сервис и поддержка",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Интеллектуальная обработка документов",
+          "text": "Автоматизировать обработку сканов и PDF, чтобы заявки проходили быстрее и с минимальным количеством ошибок ручного ввода.",
+          "industry": "Финансы и банки",
+          "direction": "Прикладное ПО / 1С / ERP",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Модернизация ИТ-инфраструктуры государственного института развития",
+          "text": "Повысить управляемость и отказоустойчивость инфраструктуры государственного института развития с учётом широкой филиальной сети.",
+          "industry": "Госсектор",
+          "direction": "ИТ-инфраструктура",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Центр мониторинга и эксплуатация ЦОД",
+          "text": "Снизить риск остановок ЦОД и обеспечить постоянный контроль состояния оборудования и инженерных систем.",
+          "industry": "ИТ и сервисы",
+          "direction": "ИТ-сервис и поддержка",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Интеллектуальная обработка документов",
+          "text": "Автоматизировать обработку сканов и PDF, чтобы заявки проходили быстрее и с минимальным количеством ошибок ручного ввода.",
+          "industry": "Финансы и банки",
+          "direction": "Прикладное ПО / 1С / ERP",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Модернизация ИТ-инфраструктуры государственного института развития",
+          "text": "Повысить управляемость и отказоустойчивость инфраструктуры государственного института развития с учётом широкой филиальной сети.",
+          "industry": "Госсектор",
+          "direction": "ИТ-инфраструктура",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Центр мониторинга и эксплуатация ЦОД",
+          "text": "Снизить риск остановок ЦОД и обеспечить постоянный контроль состояния оборудования и инженерных систем.",
+          "industry": "ИТ и сервисы",
+          "direction": "ИТ-сервис и поддержка",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Интеллектуальная обработка документов",
+          "text": "Автоматизировать обработку сканов и PDF, чтобы заявки проходили быстрее и с минимальным количеством ошибок ручного ввода.",
+          "industry": "Финансы и банки",
+          "direction": "Прикладное ПО / 1С / ERP",
+          "href": "#"
+        })
+        @@include('sections/project-card.html', {
+          "title": "Модернизация ИТ-инфраструктуры государственного института развития",
+          "text": "Повысить управляемость и отказоустойчивость инфраструктуры государственного института развития с учётом широкой филиальной сети.",
+          "industry": "Госсектор",
+          "direction": "ИТ-инфраструктура",
+          "href": "#"
+        })
+    </div>
+
+    <p class="projects-catalog__empty" role="status" hidden>По выбранным фильтрам проектов нет</p>
+
+    <div class="projects-catalog__footer" data-reveal>
+      <button class="button button--outline projects-catalog__more" type="button" hidden>Показать еще</button>
+    </div>
+  </div>
+</section>

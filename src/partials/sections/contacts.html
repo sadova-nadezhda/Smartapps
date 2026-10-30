@@ -4,14 +4,14 @@
       <div class="tag contacts__tag"><span class="tag__text">Контакты</span></div>
       <h2 class="contacts__title" id="contacts-title" data-reveal>Свяжитесь с нами удобным способом или оставьте заявку на&nbsp;консультацию</h2>
 
-      <div class="contacts__city" data-reveal="fade">
-        <button class="contacts__city-toggle" type="button" aria-expanded="false" aria-controls="contacts-cities" aria-label="Выбрать город">
-          <span class="contacts__city-current">Астана</span>
-          <svg class="contacts__city-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg>
+      <div class="dropdown contacts__city" data-reveal="fade">
+        <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="contacts-cities" aria-label="Выбрать город">
+          <span class="dropdown__current">Астана</span>
+          <svg class="dropdown__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg>
         </button>
-        <ul class="contacts__city-list" id="contacts-cities" hidden>
-          <li><button class="contacts__city-option" type="button" data-city="astana" aria-pressed="true">Астана</button></li>
-          <li><button class="contacts__city-option" type="button" data-city="almaty" aria-pressed="false">Алматы</button></li>
+        <ul class="dropdown__list" id="contacts-cities" hidden>
+          <li><button class="dropdown__option" type="button" data-city="astana" aria-pressed="true">Астана</button></li>
+          <li><button class="dropdown__option" type="button" data-city="almaty" aria-pressed="false">Алматы</button></li>
         </ul>
       </div>
     </div>

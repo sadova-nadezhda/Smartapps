@@ -5,6 +5,7 @@
 @use "header";
 @use "modals";
 @use "form";
+@use "dropdown";
 @use "reveal";
 
 // Глобальные секции
@@ -26,5 +27,6 @@
 @use "sections/services";
 @use "sections/project-card";
 @use "sections/projects";
+@use "sections/projects-catalog";
 @use "sections/not-found";
 @use "sections/thank-you";

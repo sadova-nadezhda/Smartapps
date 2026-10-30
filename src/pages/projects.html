@@ -1,0 +1,15 @@
+@@include('head.html', { "title": "Проекты", "description": "" })
+@@include('header.html', { "page": "projects" })
+
+<main class="main">
+  @@include('sections/projects-catalog.html')
+  @@include('sections/feedback.html', {
+    "title": "Спроектируем инфраструктуру, соответствующую текущим задачам и готовую к дальнейшему развитию",
+    "text": "",
+    "btn": "Запросить коммерческое предложение",
+    "variant": "wide-btn"
+  })
+</main>
+
+@@include('sections/footer.html')
+@@include('scripts.html')
