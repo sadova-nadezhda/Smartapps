@@ -1,0 +1,163 @@
+@use "../functions" as *;
+
+// ======================
+// История
+// ======================
+.history {
+  --history-dot: #{s(10)};
+  --history-line-top: #{s(6)};
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: column;
+      gap: s(24);
+    }
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: s(40);
+
+    @include tablet {
+      display: contents;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: s(12);
+
+    @include tablet {
+      order: 1;
+    }
+  }
+
+  &__content {
+    width: s(900);
+    min-width: 0;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__track {
+    margin-right: s(-40);
+
+    @include mobile {
+      margin-right: s(-16);
+    }
+  }
+
+  &__slide {
+    position: relative;
+    width: s(230);
+    padding-top: var(--history-line-top);
+
+    @include mobile {
+      width: s(140);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: var(--history-line-top);
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-line);
+    }
+  }
+
+  &__year {
+    position: relative;
+    padding: s(44) 0 0;
+    color: var(--color-line);
+    font: 600 s(54)/1 var(--font-main);
+    font-variant-numeric: lining-nums proportional-nums;
+    transition: color 0.3s;
+
+    @include mobile {
+      padding-top: s(24);
+      font-size: s(32);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: var(--history-dot);
+      height: var(--history-dot);
+      border: 1px solid var(--color-line);
+      border-radius: 50%;
+      background-color: var(--color-line);
+      transform: translate(-50%, -50%);
+      transition: background-color 0.3s;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-text-muted);
+      }
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--color-text);
+      outline-offset: s(-1);
+    }
+
+    &.is-active {
+      color: var(--color-text);
+
+      &::before {
+        background-color: var(--color-text);
+      }
+    }
+  }
+
+  &__panels {
+    margin-top: s(40);
+
+    @include mobile {
+      margin-top: s(24);
+    }
+  }
+
+  &__panel {
+    max-width: s(556);
+    animation: history-fade 0.4s ease;
+
+    & + & {
+      margin-top: s(40);
+    }
+  }
+
+  &__panel-title {
+    font: 600 s(20)/1.2 var(--font-main);
+
+    @include mobile {
+      font-size: s(18);
+    }
+  }
+
+  &__panel-text {
+    margin-top: s(14);
+
+    @include mobile {
+      margin-top: s(12);
+      font-size: s(14);
+    }
+  }
+}
+
+@keyframes history-fade {
+  from {
+    opacity: 0;
+  }
+}

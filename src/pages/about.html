@@ -2,16 +2,36 @@
 @@include('header.html', { "page": "about" })
 
 <main class="main">
-  <section class="about">
-    <div class="about__container container">
-      <h1 class="about__title" data-reveal>О компании</h1>
+  <section class="hero section-pad-bottom section-hidden">
+    <div class="hero__container container">
+      <div class="hero__frame">
+        <svg class="hero__lines" aria-hidden="true" focusable="false">
+          <path class="hero__line hero__line--outer" pathLength="1" />
+          <path class="hero__line hero__line--inner" pathLength="1" />
+          <path class="hero__line hero__line--bracket" pathLength="1" />
+          <path class="hero__bar" />
+          <circle class="hero__dot hero__dot--inner" />
+          <circle class="hero__dot hero__dot--inner" />
+          <circle class="hero__dot hero__dot--bracket" />
+          <circle class="hero__dot hero__dot--bracket" />
+        </svg>
+
+        <h1 class="hero__title" data-reveal>ИТ-интегратор полного цикла</h1>
+        <p class="hero__subtitle" data-reveal data-reveal-delay="150">Создаём, модернизируем и сопровождаем корпоративную ИТ-инфраструктуру — от анализа и проектирования до внедрения и дальнейшего развития</p>
+        <div class="hero__actions" data-reveal data-reveal-delay="300">
+          <button class="button button--accent hero__btn modal-btn" type="button" data-type="feedback">Обсудить задачу</button>
+        </div>
+      </div>
     </div>
   </section>
-
+  @@include('sections/about.html')
+  @@include('sections/reasons.html')
+  @@include('sections/history.html')
+  
   @@include('sections/feedback.html', {
-    "title": "Свяжитесь с нами",
-    "text": "Расскажите о задаче — подберём решение и ответим на вопросы",
-    "btn": "Получить консультацию"
+    "title": "Подберем решение для ваших задач",
+    "text": "Поможем с выбором оптимального решения с учетом ваших требований, бюджета и планов развития",
+    "btn": "Запросить коммерческое предложение"
   })
 </main>
 

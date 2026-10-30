@@ -1,0 +1,40 @@
+<section class="history section-pad-bottom" id="history">
+  <div class="history__container container">
+    <div class="history__inner">
+      <div class="history__aside">
+        <div class="history__head">
+          <h2 class="tag history__tag"><span class="tag__text">История</span></h2>
+        </div>
+
+        <div class="history__nav" data-reveal="fade">
+          <button class="slider-arrow slider-arrow--filled history__arrow history__arrow--prev" type="button" aria-label="Предыдущий год">
+            <svg class="slider-arrow__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 7l-5 5 5 5" /></svg>
+          </button>
+          <button class="slider-arrow slider-arrow--filled history__arrow history__arrow--next" type="button" aria-label="Следующий год">
+            <svg class="slider-arrow__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 7l5 5-5 5" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="history__content" data-reveal>
+        <div class="history__track swiper">
+          <div class="history__years swiper-wrapper" role="tablist" aria-label="Годы истории компании">
+            @@include('sections/history-year.html', { "id": "1", "year": "2012" })
+            @@include('sections/history-year.html', { "id": "2", "year": "2017" })
+            @@include('sections/history-year.html', { "id": "3", "year": "2019" })
+            @@include('sections/history-year.html', { "id": "4", "year": "2020" })
+            @@include('sections/history-year.html', { "id": "5", "year": "2021" })
+          </div>
+        </div>
+
+        <div class="history__panels">
+          @@include('sections/history-panel.html', { "id": "1", "title": "Основание компании", "text": "SmartApps основана в&nbsp;Астане командой выпускников международных образовательных программ и&nbsp;зарубежных вузов. Компания одной из первых в&nbsp;Казахстане начала развивать модель Managed Service Provider (MSP), ориентируясь прежде всего на&nbsp;международные компании и комплексное обслуживание их&nbsp;ИТ-инфраструктуры." })
+          @@include('sections/history-panel.html', { "id": "2", "title": "Заголовок", "text": "Текст описания" })
+          @@include('sections/history-panel.html', { "id": "3", "title": "Заголовок", "text": "Текст описания" })
+          @@include('sections/history-panel.html', { "id": "4", "title": "Заголовок", "text": "Текст описания" })
+          @@include('sections/history-panel.html', { "id": "5", "title": "Заголовок", "text": "Текст описания" })
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

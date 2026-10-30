@@ -1,0 +1,61 @@
+@use "../functions" as *;
+
+.about {
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: column;
+      gap: s(24);
+    }
+
+    @include mobile {
+      gap: s(18);
+    }
+  }
+
+  &__intro {
+    width: s(876);
+    margin-right: s(24);
+
+    @include tablet {
+      width: auto;
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    @include mobile {
+      line-height: 1.2;
+    }
+  }
+
+  &__text {
+    margin-top: s(14);
+    font-size: s(18);
+
+    @include mobile {
+      margin-top: s(12);
+      font-size: s(16);
+    }
+  }
+
+  &__stats {
+    width: s(900);
+    margin-top: s(40);
+    margin-left: auto;
+
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+      width: auto;
+      margin-top: s(32);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: s(24);
+    }
+  }
+}

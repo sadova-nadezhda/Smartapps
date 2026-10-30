@@ -4,11 +4,11 @@
       <h2 class="tag projects__tag" id="projects-title"><span class="tag__text">Наши проекты</span></h2>
 
       <div class="projects__nav" data-reveal="fade">
-        <button class="projects__arrow projects__arrow--prev" type="button" aria-label="Предыдущий проект">
-          <svg class="projects__arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 7l-5 5 5 5" /></svg>
+        <button class="slider-arrow projects__arrow projects__arrow--prev" type="button" aria-label="Предыдущий проект">
+          <svg class="slider-arrow__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 7l-5 5 5 5" /></svg>
         </button>
-        <button class="projects__arrow projects__arrow--next" type="button" aria-label="Следующий проект">
-          <svg class="projects__arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 7l5 5-5 5" /></svg>
+        <button class="slider-arrow projects__arrow projects__arrow--next" type="button" aria-label="Следующий проект">
+          <svg class="slider-arrow__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 7l5 5-5 5" /></svg>
         </button>
       </div>
     </div>
@@ -42,7 +42,6 @@
             "href": "#"
           })
         </div>
-        <!-- Копии для проверки слайдера -->
         <div class="projects__slide swiper-slide">
           @@include('sections/project-card.html', {
             "title": "Центр мониторинга и эксплуатация ЦОД",

@@ -87,6 +87,7 @@
     font-size: s(20);
 
     @include mobile {
+      margin-top: s(12);
       font-size: s(16);
     }
   }
@@ -98,6 +99,7 @@
 
     @include mobile {
       margin-top: s(32);
+      padding-inline: s(16);
     }
   }
 }
