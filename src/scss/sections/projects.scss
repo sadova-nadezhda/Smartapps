@@ -94,4 +94,10 @@
       height: s(54);
     }
   }
+
+  &--compact &__progress {
+    @include desktop {
+      display: none;
+    }
+  }
 }

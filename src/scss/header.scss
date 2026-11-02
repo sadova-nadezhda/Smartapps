@@ -236,6 +236,38 @@
     }
   }
 
+  &__split {
+    position: relative;
+    height: 100%;
+  }
+
+  &__item.is-open &__link {
+    background-color: var(--color-surface);
+
+    @include tablet {
+      color: var(--color-accent);
+    }
+  }
+
+  &__toggle--split {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: s(34);
+    height: s(34);
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: -2px;
+    }
+
+    @include tablet {
+      top: 0;
+      width: s(52);
+      height: auto;
+    }
+  }
+
   a#{&}__link &__icon {
     @include tablet {
       display: none;

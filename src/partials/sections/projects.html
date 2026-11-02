@@ -1,8 +1,9 @@
-<section class="projects section-pad-bottom" id="projects" aria-labelledby="projects-title">
+<section class="projects projects--@@variant section-pad-bottom" id="projects" aria-labelledby="projects-title">
   <div class="projects__container container">
     <div class="projects__head">
       <h2 class="tag projects__tag" id="projects-title"><span class="tag__text">Наши проекты</span></h2>
 
+      @@if (variant !== 'compact') {
       <div class="projects__nav" data-reveal="fade">
         <button class="slider-arrow projects__arrow projects__arrow--prev" type="button" aria-label="Предыдущий проект">
           <svg class="slider-arrow__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 7l-5 5 5 5" /></svg>
@@ -11,6 +12,7 @@
           <svg class="slider-arrow__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 7l5 5-5 5" /></svg>
         </button>
       </div>
+      }
     </div>
 
     <div class="projects__slider swiper" aria-label="Проекты">
@@ -39,9 +41,10 @@
             "text": "Повысить управляемость и отказоустойчивость инфраструктуры государственного института развития с учётом широкой филиальной сети.",
             "industry": "Госсектор",
             "direction": "ИТ-инфраструктура",
-            "href": "#"
+            "href": "projects-inner.html"
           })
         </div>
+        @@if (variant !== 'compact') {
         <div class="projects__slide swiper-slide">
           @@include('sections/project-card.html', {
             "title": "Центр мониторинга и эксплуатация ЦОД",
@@ -66,16 +69,19 @@
             "text": "Повысить управляемость и отказоустойчивость инфраструктуры государственного института развития с учётом широкой филиальной сети.",
             "industry": "Госсектор",
             "direction": "ИТ-инфраструктура",
-            "href": "#"
+            "href": "projects-inner.html"
           })
         </div>
+        }
       </div>
     </div>
 
     <div class="projects__progress" aria-hidden="true" data-reveal="fade" data-reveal-delay="300"><span class="projects__progress-fill"></span></div>
 
+    @@if (variant !== 'compact') {
     <div class="projects__footer" data-reveal>
       <a class="button button--outline projects__all" href="#">Все проекты</a>
     </div>
+    }
   </div>
 </section>

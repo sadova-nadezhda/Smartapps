@@ -27,10 +27,12 @@
       <nav class="header__nav" aria-label="Основное меню">
         <ul class="header__menu">
           <li class="header__item header__item--mega">
-            <button class="header__link header__toggle" type="button" aria-expanded="false" aria-controls="menu-service">
-              Услуги
-              <svg class="header__icon" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg>
-            </button>
+            <div class="header__split">
+              <a class="header__link" href="#">Услуги</a>
+              <button class="header__toggle header__toggle--split" type="button" aria-expanded="false" aria-controls="menu-service" aria-label="Открыть меню «Услуги»">
+                <svg class="header__icon" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg>
+              </button>
+            </div>
             <div class="header__dropdown header__dropdown--mega" id="menu-service">
               <div class="header__dropdown-inner">
                 <div class="menu-service">
@@ -89,10 +91,12 @@
           </li>
 
           <li class="header__item">
-            <button class="header__link header__toggle @@if (page === 'projects') {is-current}" type="button" aria-expanded="false" aria-controls="menu-projects">
-              Проекты
-              <svg class="header__icon" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg>
-            </button>
+            <div class="header__split">
+              <a class="header__link @@if (page === 'projects' || page === 'projects-inner') {is-current}" href="projects.html" @@if (page === 'projects') {aria-current="page"}>Проекты</a>
+              <button class="header__toggle header__toggle--split" type="button" aria-expanded="false" aria-controls="menu-projects" aria-label="Открыть меню «Проекты»">
+                <svg class="header__icon" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg>
+              </button>
+            </div>
             <div class="header__dropdown" id="menu-projects">
               <div class="header__dropdown-inner">
                 <ul class="header__sublist">
@@ -112,8 +116,8 @@
               <div class="header__dropdown-inner">
                 <ul class="header__sublist">
                   <li><a class="header__sublink @@if (page === 'about') {is-active}" href="about.html">О нас</a></li>
-                  <li><a class="header__sublink" href="#">История</a></li>
-                  <li><a class="header__sublink" href="#">Команда</a></li>
+                  <li><a class="header__sublink" href="about.html#history">История</a></li>
+                  <li><a class="header__sublink" href="about.html#team">Команда</a></li>
                   <li><a class="header__sublink" href="about.html#vacancies">Вакансии</a></li>
                   <li><a class="header__sublink" href="about.html#contacts">Контакты</a></li>
                 </ul>

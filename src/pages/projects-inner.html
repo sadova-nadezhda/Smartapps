@@ -1,0 +1,16 @@
+@@include('head.html', { "title": "Модернизация ИТ-инфраструктуры государственного института развития", "description": "Повысить управляемость и отказоустойчивость инфраструктуры государственного института развития с учётом широкой филиальной сети." })
+@@include('header.html', { "page": "projects-inner" })
+
+<main class="main">
+  @@include('sections/project-detail.html')
+  @@include('sections/projects.html', { "variant": "compact" })
+  @@include('sections/feedback.html', {
+    "title": "Спроектируем инфраструктуру, соответствующую текущим задачам и готовую к дальнейшему развитию",
+    "text": "",
+    "btn": "Запросить коммерческое предложение",
+    "variant": "wide-btn"
+  })
+</main>
+
+@@include('sections/footer.html')
+@@include('scripts.html')
