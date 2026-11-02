@@ -1,0 +1,19 @@
+<section class="results @@mod section-pad-bottom" id="@@id">
+  <div class="results__container container">
+    <div class="results__head">
+      @@if (title) {
+      <div class="tag results__tag"><span class="tag__text">@@tag</span></div>
+      <h2 class="results__title" data-reveal>@@title</h2>
+      }
+      @@if (!title) {
+      <h2 class="tag results__tag"><span class="tag__text">@@tag</span></h2>
+      }
+    </div>
+
+    <div class="results__grid" data-reveal-stagger data-reveal-delay="150" data-reveal-step="100">
+      @@for (var i = 0; i < items.length; i++) {
+      @@include('sections/result-card.html', `+JSON.stringify(items[i])+`)
+      }
+    </div>
+  </div>
+</section>

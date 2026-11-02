@@ -1,0 +1,98 @@
+@use "../functions" as *;
+
+// ======================
+// Связанные решения
+// ======================
+.solutions {
+  @include card-slider;
+
+  &:has(.solutions__tag.is-ready) .brackets {
+    color: var(--color-accent);
+  }
+
+  &__card {
+    --cut: #{s(30)};
+
+    @include cut-frame;
+
+    display: block;
+    height: 100%;
+    min-height: s(153);
+    padding: s(26) s(8) s(32) s(20);
+    color: var(--color-text);
+    outline: none;
+
+    @include mobile {
+      --cut: #{s(20)};
+
+      min-height: s(140);
+      padding: s(20) s(16) s(24);
+    }
+
+    &::before {
+      transition: background-color 0.3s;
+    }
+
+    &:focus-visible {
+      --color-line: var(--color-accent);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        --color-line: var(--color-accent);
+      }
+    }
+
+    .brackets {
+      --bracket-len: #{s(16)};
+
+      transition: color 0.6s var(--tag-color-delay, 0.8s);
+
+      @include mobile {
+        --bracket-len: #{s(10)};
+      }
+    }
+  }
+
+  &__card-title {
+    font-size: s(20);
+    font-weight: 600;
+
+    @include mobile {
+      font-size: s(18);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: s(12) s(6);
+    margin-top: s(16);
+    padding: 0;
+    list-style: none;
+
+    @include mobile {
+      gap: s(8) s(6);
+      margin-top: s(12);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: s(5);
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      width: s(5);
+      height: s(5);
+      border-radius: 50%;
+      background-color: var(--color-accent);
+    }
+
+    @include mobile {
+      font-size: s(14);
+    }
+  }
+}

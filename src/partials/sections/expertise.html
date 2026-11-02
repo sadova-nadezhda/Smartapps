@@ -1,0 +1,26 @@
+<section class="expertise section-pad-bottom" id="expertise">
+  <div class="expertise__container container">
+    <div class="expertise__head">
+      <div class="tag expertise__tag"><span class="tag__text">Проблематика</span></div>
+      <div class="expertise__intro" data-reveal-stagger data-reveal-step="150">
+        <h2 class="expertise__title">@@title</h2>
+        @@if (text) {
+        <p class="expertise__text">@@text</p>
+        }
+      </div>
+    </div>
+
+    <div class="expertise__grid" data-reveal-stagger data-reveal-delay="150" data-reveal-step="100">
+      @@for (var i = 0; i < items.length; i++) {
+      @@include('sections/expertise-card.html', `+JSON.stringify(items[i])+`)
+      }
+
+      <div class="expertise__card expertise__card--chamfer">
+        <span class="expertise__num" aria-hidden="true">@@final.num</span>
+        <h3 class="expertise__card-title">@@final.title</h3>
+        <p class="expertise__card-text">@@final.text</p>
+        <button class="button button--outline expertise__btn modal-btn" type="button" data-type="feedback">@@final.btn</button>
+      </div>
+    </div>
+  </div>
+</section>

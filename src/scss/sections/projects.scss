@@ -49,32 +49,11 @@
   }
 
   &__progress {
-    position: relative;
-    height: s(2);
     margin-top: s(32);
 
     @include mobile {
       margin-top: s(24);
     }
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 50% 0 auto;
-      height: 1px;
-      background-color: var(--color-line);
-      transform: translateY(-50%);
-    }
-  }
-
-  &__progress-fill {
-    position: absolute;
-    inset: 0;
-    background-color: var(--color-accent);
-    transform: scaleX(var(--progress, 0));
-    transform-origin: left center;
-    transition-property: transform;
-    transition-timing-function: ease;
   }
 
   &__footer {

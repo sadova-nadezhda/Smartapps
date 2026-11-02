@@ -1,0 +1,35 @@
+<section class="directions section-pad-bottom" id="directions" aria-labelledby="directions-title">
+  <div class="directions__container container">
+    <div class="directions__head">
+      <h2 class="tag directions__tag" id="directions-title"><span class="tag__text">Направления</span></h2>
+    </div>
+
+    <div class="directions__slider swiper" aria-label="Направления">
+      <div class="directions__list swiper-wrapper" data-reveal-stagger="right">
+        <div class="directions__slide swiper-slide">
+          @@include('sections/direction-card.html', {
+            "title": "ИТ&#8209;консалтинг",
+            "text": "Оцениваем задачи бизнеса и&nbsp;текущее состояние ИТ-среды, помогаем определить подходящие технологические решения и&nbsp;сформировать стратегию развития инфраструктуры",
+            "href": "#"
+          })
+        </div>
+        <div class="directions__slide swiper-slide">
+          @@include('sections/direction-card.html', {
+            "title": "Аудит ИТ&#8209;инфраструктуры",
+            "text": "Проводим комплексную оценку серверной, сетевой и&nbsp;программной инфраструктуры, выявляем проблемные зоны, риски и&nbsp;возможности для оптимизации",
+            "href": "#"
+          })
+        </div>
+        <div class="directions__slide swiper-slide">
+          @@include('sections/direction-card.html', {
+            "title": "Планирование ИТ&#8209;инфраструктуры",
+            "text": "Формируем целевую архитектуру и&nbsp;последовательность изменений с&nbsp;учётом текущих ресурсов, технических требований и&nbsp;планов развития компании",
+            "href": "#"
+          })
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-progress directions__progress" aria-hidden="true" data-reveal="fade" data-reveal-delay="300"><span class="slider-progress__fill"></span></div>
+  </div>
+</section>

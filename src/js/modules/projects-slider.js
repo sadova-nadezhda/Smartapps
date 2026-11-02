@@ -3,6 +3,7 @@
 // ======================
 import { $ } from "./helpers.js";
 import { getWidthMultiplier } from "./multiplier.js";
+import { sliderProgressEvents } from "./slider-progress.js";
 
 const getGap = () => getWidthMultiplier() * (window.innerWidth <= 767 ? 12 : 24);
 
@@ -10,15 +11,6 @@ export const initProjectsSlider = () => {
   const section = $(".projects");
   const slider = section && $(".projects__slider", section);
   if (!slider || typeof window.Swiper === "undefined") return;
-
-  const fill = $(".projects__progress-fill", section);
-
-  const updateProgress = (swiper) => {
-    if (!fill) return;
-    const visible = Math.min(1, swiper.width / swiper.virtualSize) || 1;
-    const progress = Math.min(1, Math.max(0, swiper.progress || 0));
-    fill.style.setProperty("--progress", visible + (1 - visible) * progress);
-  };
 
   const swiper = new window.Swiper(slider, {
     slidesPerView: "auto",
@@ -43,12 +35,7 @@ export const initProjectsSlider = () => {
       beforeResize(swiper) {
         swiper.params.spaceBetween = getGap();
       },
-      init: updateProgress,
-      progress: updateProgress,
-      resize: updateProgress,
-      setTransition(swiper, duration) {
-        if (fill) fill.style.transitionDuration = `${duration}ms`;
-      },
+      ...sliderProgressEvents($(".slider-progress__fill", section)),
     },
   });
 

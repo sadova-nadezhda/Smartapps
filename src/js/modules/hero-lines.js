@@ -9,6 +9,11 @@ import { getWidthMultiplier } from "./multiplier.js";
 // parts — параллелограммы [низ-лево, верх-лево, верх-право, низ-право] в px макета от bx
 const BAR = [[0, 13, 136, 123], [131, 143, 155, 143], [151, 163, 177, 164]];
 
+// Скоба на десктопе: x — левый край, dot — точка на верхней линии (px макета)
+const BRACKET = { x: 75, dot: 188 };
+// Для длинного заголовка скоба шире, чтобы точка не заходила на текст
+const BRACKET_COMPACT = { x: 49, dot: 120 };
+
 export const slashes = (n, bx, by, bt, parts = BAR) =>
   parts.map(([x1, x2, x3, x4]) => `M${bx + n(x1)} ${by}L${bx + n(x2)} ${bt}H${bx + n(x3)}L${bx + n(x4)} ${by}Z`).join("");
 
@@ -27,7 +32,7 @@ export const buildMobileFrame = (w, h, n) => {
   };
 };
 
-export const buildFrame = (w, h) => {
+export const buildFrame = (w, h, bracket = BRACKET) => {
   const u = getWidthMultiplier();
   const n = (v) => Math.round(v * u * 10) / 10;
   const vw = window.innerWidth;
@@ -50,7 +55,8 @@ export const buildFrame = (w, h) => {
 
   const c = n(60);
   const i = n(13);
-  const bx = n(75); // левый край скобы
+  const bx = n(bracket.x); // левый край скобы
+  const bd = n(bracket.dot); // точка на верхней линии скобы
   const by = h - n(27); // низ скобы
   const bt = h - n(40); // верх плашки
 
@@ -60,12 +66,12 @@ export const buildFrame = (w, h) => {
       `M${i} ${h - n(31)}V${n(66)}L${n(66)} ${i}H${n(235)}L${n(252)} ${n(30)}` +
       `H${w - n(253)}L${w - n(223)} ${i}H${w - n(14)}V${h - n(66)}` +
       `L${w - n(65)} ${h - n(14)}H${w - n(228)}V${n(158)}`,
-    bracket: `M${n(188)} ${n(76)}H${bx}V${by}H${w - n(253)}V${h - n(107)}`,
+    bracket: `M${bd} ${n(76)}H${bx}V${by}H${w - n(253)}V${h - n(107)}`,
     bar: slashes(n, bx, by, bt),
     dots: [
       [i, h - n(31)],
       [w - n(228), n(158)],
-      [n(188), n(76)],
+      [bd, n(76)],
       [w - n(253), h - n(107)],
     ],
     r: n(5),
@@ -82,11 +88,12 @@ export const initHeroLines = () => {
   const bracket = $(".hero__line--bracket", svg);
   const bar = $(".hero__bar", svg);
   const dots = $$(".hero__dot", svg);
+  const bracketParams = frame.classList.contains("hero__frame--compact") ? BRACKET_COMPACT : BRACKET;
 
   const render = () => {
     const { width, height } = svg.getBoundingClientRect();
     if (!width || !height) return;
-    const g = buildFrame(Math.round(width), Math.round(height));
+    const g = buildFrame(Math.round(width), Math.round(height), bracketParams);
 
     outer.setAttribute("d", g.outer);
     inner.setAttribute("d", g.inner);

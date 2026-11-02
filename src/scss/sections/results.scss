@@ -1,0 +1,111 @@
+@use "../functions" as *;
+
+// ======================
+// Результат
+// ======================
+.results {
+  &__head {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: s(20);
+    align-items: start;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: s(24);
+    }
+
+    @include mobile {
+      gap: s(18);
+    }
+  }
+
+  &__title {
+    grid-column: 2 / -1;
+    max-width: s(680);
+
+    @include tablet {
+      grid-column: auto;
+    }
+  }
+
+  &:has(.results__tag.is-ready) &__card::before {
+    background-color: var(--color-accent);
+  }
+
+  &:has(.results__tag.is-ready) &__hatch {
+    color: var(--color-accent);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: s(20);
+    margin-top: s(40);
+
+    @include tablet {
+      margin-top: s(32);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: s(16);
+      margin-top: s(24);
+    }
+  }
+
+  &__card {
+    --cut: #{s(30)};
+
+    @include cut-frame;
+
+    min-height: s(68);
+    padding: s(20) s(32) s(32);
+
+    @include mobile {
+      --cut: #{s(20)};
+
+      padding: s(16) s(24) s(34);
+    }
+
+    &::before {
+      transition: background-color 0.6s var(--tag-color-delay, 0.8s);
+    }
+
+    > .results__hatch {
+      position: absolute;
+      right: s(28);
+      bottom: s(10);
+      width: s(185);
+      height: s(16);
+      color: var(--color-line);
+      background-image: repeating-linear-gradient(90deg, currentColor 0 s(14), transparent s(14) s(19));
+      transform: skewX(-45deg);
+      transition: color 0.6s var(--tag-color-delay, 0.8s);
+
+      @include mobile {
+        right: s(23);
+        width: s(147);
+        height: s(14);
+      }
+    }
+  }
+
+  &__card-title {
+    font-size: s(16);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  @include desktop {
+    &--compact &__card {
+      display: flex;
+      align-items: center;
+      padding-block: s(16);
+    }
+
+    &--compact &__card-title {
+      max-width: s(370);
+    }
+  }
+}

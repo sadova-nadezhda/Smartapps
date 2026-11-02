@@ -1,0 +1,47 @@
+@use "../functions" as *;
+
+// ======================
+// Статья блога
+// ======================
+.news-detail {
+  @include detail-page;
+
+  &__head {
+    grid-column: 2;
+    padding-right: s(20);
+
+    @include tablet {
+      grid-column: 1 / -1;
+      padding-right: 0;
+    }
+
+    @include mobile {
+      grid-column: auto;
+    }
+  }
+
+  &__side {
+    align-self: start;
+  }
+
+  &__media {
+    aspect-ratio: 8 / 5;
+    margin-right: s(-20);
+    margin-bottom: s(30);
+    overflow: hidden;
+
+    @include tablet {
+      margin-right: 0;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

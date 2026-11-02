@@ -1,0 +1,200 @@
+@use "../functions" as *;
+
+@function cut-mirror($c) {
+  @return polygon(
+    0 0, calc(100% - #{$c}) 0, 100% $c, 100% 100%,
+    $c 100%, 0 calc(100% - #{$c})
+  );
+}
+
+@function cut-default($c) {
+  @return polygon(
+    $c 0, 100% 0, 100% calc(100% - #{$c}),
+    calc(100% - #{$c}) 100%, 0 100%, 0 $c
+  );
+}
+
+// ======================
+// Когда требуется экспертиза
+// ======================
+.expertise {
+  &__head {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: s(20);
+    align-items: start;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: s(24);
+    }
+
+    @include mobile {
+      gap: s(18);
+    }
+  }
+
+  &__intro {
+    grid-column: 2 / -1;
+
+    @include tablet {
+      grid-column: auto;
+    }
+  }
+
+  &__title {
+    @include mobile {
+      line-height: 1.2;
+    }
+  }
+
+  &__text {
+    margin-top: s(14);
+    font-size: s(18);
+
+    @include mobile {
+      margin-top: s(12);
+      font-size: s(16);
+    }
+  }
+
+  &:has(.expertise__tag.is-ready) &__card::before {
+    background-color: var(--color-accent);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: s(20);
+    margin-top: s(40);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: auto;
+      margin-top: s(32);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: s(16);
+      margin-top: s(24);
+    }
+  }
+
+  &__card {
+    --cut: #{s(30)};
+
+    @include cut-frame;
+
+    display: flex;
+    flex-direction: column;
+    min-height: s(150);
+    padding: s(20);
+
+    @include mobile {
+      --cut: #{s(20)};
+
+      min-height: s(140);
+      padding: s(16);
+    }
+
+    &::before {
+      transition: background-color 0.6s var(--tag-color-delay, 0.8s);
+    }
+
+    &--mirror {
+      &::before {
+        clip-path: cut-mirror(var(--cut));
+      }
+
+      &::after {
+        clip-path: cut-mirror(var(--cut-inner));
+      }
+    }
+
+    @include mobile {
+      &:nth-child(3)::before {
+        clip-path: cut-default(var(--cut));
+      }
+
+      &:nth-child(3)::after {
+        clip-path: cut-default(var(--cut-inner));
+      }
+
+      &:nth-child(4)::before {
+        clip-path: cut-mirror(var(--cut));
+      }
+
+      &:nth-child(4)::after {
+        clip-path: cut-mirror(var(--cut-inner));
+      }
+    }
+
+    &--chamfer {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      @include desktop {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+      }
+
+      @include tablet {
+        grid-column: 1 / -1;
+      }
+
+      &::before {
+        clip-path: chamfer(var(--cut));
+      }
+
+      &::after {
+        clip-path: chamfer(var(--cut-inner));
+      }
+
+      .expertise__num {
+        margin-top: 0;
+        margin-bottom: s(14);
+      }
+
+      .expertise__card-text {
+        max-width: s(360);
+      }
+    }
+  }
+
+  &__card-title {
+    font-size: s(20);
+
+    @include mobile {
+      font-size: s(18);
+    }
+  }
+
+  &__card-text {
+    max-width: s(380);
+    margin-top: s(12);
+
+    @include mobile {
+      font-size: s(14);
+    }
+  }
+
+  &__num {
+    margin-top: auto;
+    padding-top: s(16);
+    color: var(--color-line);
+    font-size: s(20);
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &__btn {
+    margin-top: s(40);
+
+    @include mobile {
+      margin-top: s(24);
+    }
+  }
+}

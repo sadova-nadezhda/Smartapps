@@ -550,6 +550,54 @@
       font-size: s(13);
     }
   }
+
+  &__more {
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: s(24);
+    font-size: s(15);
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: s(4);
+    color: var(--color-text);
+
+    @include mobile {
+      font-size: s(14);
+    }
+  }
+
+  &--direction {
+    --cut: #{s(30)};
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: s(20);
+
+    @include mobile {
+      --cut: #{s(20)};
+
+      padding: s(16);
+    }
+  }
+
+  &--direction &__hatch {
+    @include desktop {
+      width: s(198);
+    }
+  }
+
+  &--direction &__text {
+    font-size: s(16);
+    color: var(--color-text);
+
+    @include mobile {
+      font-size: s(14);
+    }
+  }
 }
 
 // ======================

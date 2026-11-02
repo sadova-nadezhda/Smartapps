@@ -1,0 +1,66 @@
+@@include('head.html', { "title": "ИТ-консалтинг", "description": "Для эффективной комплексной или сегментарной автоматизации бизнеса важно правильно выбрать ИТ-решение." })
+@@include('header.html', { "page": "services" })
+
+<main class="main">
+  <section class="hero section-pad-bottom section-hidden">
+    <div class="hero__container container">
+      <div class="hero__frame hero__frame--compact">
+        <svg class="hero__lines" aria-hidden="true" focusable="false">
+          <path class="hero__line hero__line--outer" pathLength="1" />
+          <path class="hero__line hero__line--inner" pathLength="1" />
+          <path class="hero__line hero__line--bracket" pathLength="1" />
+          <path class="hero__bar" />
+          <circle class="hero__dot hero__dot--inner" />
+          <circle class="hero__dot hero__dot--inner" />
+          <circle class="hero__dot hero__dot--bracket" />
+          <circle class="hero__dot hero__dot--bracket" />
+        </svg>
+
+        <h1 class="hero__title" data-reveal>ИТ-консалтинг</h1>
+        <p class="hero__subtitle" data-reveal data-reveal-delay="150">Для эффективной комплексной или сегментарной автоматизации бизнеса важно правильно выбрать ИТ-решение. Помогаем определить подходящие варианты с учётом технических возможностей, особенностей и ограничений конкретной компании.</p>
+        <div class="hero__actions" data-reveal data-reveal-delay="300">
+          <button class="button button--accent hero__btn modal-btn" type="button" data-type="feedback">Обсудить задачу</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  @@include('sections/expertise.html', {
+    "title": "Когда нужен ИТ-консалтинг",
+    "text": "",
+    "items": [
+      { "num": "01", "title": "Выбор ИТ-решения", "text": "Определить подходящие варианты с&nbsp;учётом задач и&nbsp;потребностей компании", "mod": "" },
+      { "num": "02", "title": "Оценка вариантов", "text": "Сравнить доступные решения, их&nbsp;преимущества и&nbsp;ограничения", "mod": "expertise__card--mirror" },
+      { "num": "03", "title": "Планирование внедрения", "text": "Оценить бюджет и&nbsp;возможные сложности реализации", "mod": "expertise__card--mirror" },
+      { "num": "04", "title": "Оценка рисков", "text": "Учесть вопросы лицензирования, совместимости и&nbsp;дальнейшей эксплуатации", "mod": "" }
+    ],
+    "final": { "num": "05", "title": "Развитие инфраструктуры", "text": "Определить решения с&nbsp;учётом перспектив дальнейшего развития компании", "btn": "Начать проект" }
+  })
+  @@include('sections/results.html', {
+    "id": "considerations",
+    "mod": "results--compact",
+    "tag": "Что учитываем",
+    "title": "",
+    "items": [
+      { "title": "Бюджет проекта" },
+      { "title": "Сложности приобретения и&nbsp;настройки оборудования" },
+      { "title": "Совместимость с&nbsp;существующими системами" },
+      { "title": "Технические возможности существующей инфраструктуры" },
+      { "title": "Требования к&nbsp;лицензированию" },
+      { "title": "Перспективы дальнейшего развития и&nbsp;эксплуатации" }
+    ]
+  })
+  @@include('sections/outcome.html', {
+    "tag": "Результат",
+    "text": "Заказчик получает обоснованный выбор ИТ-решения с&nbsp;учётом технических требований, бюджета, существующей инфраструктуры и&nbsp;особенностей дальнейшей эксплуатации."
+  })
+  @@include('sections/directions.html')
+  @@include('sections/feedback.html', {
+    "title": "Спроектируем инфраструктуру, соответствующую текущим задачам и готовую к дальнейшему развитию",
+    "text": "",
+    "btn": "Запросить коммерческое предложение",
+    "variant": "wide-btn"
+  })
+</main>
+
+@@include('sections/footer.html')
+@@include('scripts.html')

@@ -40,6 +40,12 @@
       min-height: s(383);
       padding: s(52) s(16) 0;
     }
+
+    &--compact {
+      @include desktop {
+        padding-block: s(63);
+      }
+    }
   }
 
   &__lines {

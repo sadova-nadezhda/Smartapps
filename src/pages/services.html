@@ -1,0 +1,70 @@
+@@include('head.html', { "title": "Консалтинг и планирование ИТ-инфраструктуры", "description": "Помогаем оценить текущее состояние ИТ-инфраструктуры, определить точки развития и сформировать план изменений с учётом задач бизнеса" })
+@@include('header.html', { "page": "services" })
+
+<main class="main">
+  <section class="hero section-pad-bottom section-hidden">
+    <div class="hero__container container">
+      <div class="hero__frame hero__frame--compact">
+        <svg class="hero__lines" aria-hidden="true" focusable="false">
+          <path class="hero__line hero__line--outer" pathLength="1" />
+          <path class="hero__line hero__line--inner" pathLength="1" />
+          <path class="hero__line hero__line--bracket" pathLength="1" />
+          <path class="hero__bar" />
+          <circle class="hero__dot hero__dot--inner" />
+          <circle class="hero__dot hero__dot--inner" />
+          <circle class="hero__dot hero__dot--bracket" />
+          <circle class="hero__dot hero__dot--bracket" />
+        </svg>
+
+        <h1 class="hero__title" data-reveal>Консалтинг и планирование ИТ-инфраструктуры</h1>
+        <p class="hero__subtitle" data-reveal data-reveal-delay="150">Помогаем оценить текущее состояние ИТ-инфраструктуры, определить точки развития и сформировать план изменений с учётом задач бизнеса</p>
+        <div class="hero__actions" data-reveal data-reveal-delay="300">
+          <button class="button button--accent hero__btn modal-btn" type="button" data-type="feedback">Обсудить задачу</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  @@include('sections/partners.html')
+  @@include('sections/directions.html')
+  @@include('sections/about.html', {
+    "title": "Почему выбирают SmartApps",
+    "text": "Наша компания не просто поставляет оборудование и&nbsp;программное обеспечение, а&nbsp;реализует комплексные решения для корпоративной ИТ-инфраструктуры. Наша команда обладает практическим опытом проектирования, внедрения и&nbsp;настройки инфраструктурных систем, их интеграции с&nbsp;существующей средой и&nbsp;дальнейшего сопровождения. Учитываем требования бизнеса, обеспечиваем совместимость компонентов и&nbsp;поддерживаем работоспособность решений на&nbsp;протяжении всего жизненного цикла.",
+    "stats": false
+  })
+  @@include('sections/expertise.html', {
+    "title": "Когда требуется экспертиза?",
+    "text": "ИТ-инфраструктура постоянно меняется: появляются новые системы, растёт нагрузка, меняются требования бизнеса. Без понимания текущего состояния сложно определить, какие изменения действительно необходимы, а&nbsp;какие приведут только к&nbsp;дополнительным затратам. Специалисты SmartApps помогут оценить существующую инфраструктуру, выявить проблемы и&nbsp;ограничения и&nbsp;определить оптимальный путь её дальнейшего развития.",
+    "items": [
+      { "num": "01", "title": "Аудит текущей инфраструктуры", "text": "Определить состояние, проблемы, ограничения и&nbsp;потенциальные риски", "mod": "" },
+      { "num": "02", "title": "Модернизация", "text": "Выявить, какие компоненты необходимо обновить или заменить", "mod": "expertise__card--mirror" },
+      { "num": "03", "title": "Масштабирование", "text": "Подготовить инфраструктуру к&nbsp;росту нагрузки и&nbsp;новым требованиям бизнеса", "mod": "expertise__card--mirror" },
+      { "num": "04", "title": "Оптимизация затрат", "text": "Рационально использовать ресурсы и&nbsp;определить приоритеты инвестиций", "mod": "" }
+    ],
+    "final": { "num": "05", "title": "Подготовка нового проекта", "text": "Сформировать требования и&nbsp;архитектурные подходы до&nbsp;начала реализации", "btn": "Начать проект" }
+  })
+  @@include('sections/process.html')
+  @@include('sections/results.html', {
+    "id": "results",
+    "mod": "",
+    "tag": "Результат",
+    "title": "В&nbsp;результате работы вы&nbsp;получаете основу для дальнейшего принятия решений",
+    "items": [
+      { "title": "Оценка текущего состояния" },
+      { "title": "Рекомендации по&nbsp;оптимизации" },
+      { "title": "Требования к&nbsp;оборудованию и&nbsp;ПО" },
+      { "title": "Выявленные проблемы и&nbsp;риски" },
+      { "title": "Целевую архитектуру" },
+      { "title": "План модернизации и&nbsp;развития" }
+    ]
+  })
+  @@include('sections/solutions.html')
+  @@include('sections/feedback.html', {
+    "title": "Проведём оценку текущей среды и предложим варианты дальнейших действий",
+    "text": "",
+    "btn": "Запросить коммерческое предложение",
+    "variant": "wide-btn"
+  })
+</main>
+
+@@include('sections/footer.html')
+@@include('scripts.html')
