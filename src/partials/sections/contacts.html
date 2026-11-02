@@ -1,10 +1,18 @@
-<section class="contacts section-pad-bottom" id="contacts" aria-labelledby="contacts-title">
+<section class="contacts contacts--@@variant section-pad-bottom" id="contacts" aria-labelledby="contacts-title">
   <div class="contacts__container container">
     <div class="contacts__head">
+      @@if (variant !== 'page') {
       <div class="tag contacts__tag"><span class="tag__text">Контакты</span></div>
       <h2 class="contacts__title" id="contacts-title" data-reveal>Свяжитесь с нами удобным способом или оставьте заявку на&nbsp;консультацию</h2>
+      }
+      @@if (variant === 'page') {
+      <div class="contacts__intro">
+        <h1 class="contacts__title" id="contacts-title" data-reveal>Контакты</h1>
+        <p class="contacts__subtitle" data-reveal>Свяжитесь с нами удобным способом или оставьте заявку на&nbsp;консультацию</p>
+      </div>
+      }
 
-      <div class="dropdown contacts__city" data-reveal="fade">
+      <div class="dropdown contacts__city @@if (variant === 'page') {dropdown--compact}" data-reveal="fade">
         <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="contacts-cities" aria-label="Выбрать город">
           <span class="dropdown__current">Астана</span>
           <svg class="dropdown__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5" /></svg>
