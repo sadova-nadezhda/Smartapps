@@ -91,20 +91,10 @@
           </li>
 
           <li class="header__item">
-            <div class="header__split">
-              <a class="header__link @@if (page === 'projects' || page === 'projects-inner') {is-current}" href="projects.html" @@if (page === 'projects') {aria-current="page"}>Проекты</a>
-              <button class="header__toggle header__toggle--split" type="button" aria-expanded="false" aria-controls="menu-projects" aria-label="Открыть меню «Проекты»">
-                <svg class="header__icon" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg>
-              </button>
-            </div>
-            <div class="header__dropdown" id="menu-projects">
-              <div class="header__dropdown-inner">
-                <ul class="header__sublist">
-                  <li><a class="header__sublink" href="#">По отраслям</a></li>
-                  <li><a class="header__sublink" href="#">По решениям</a></li>
-                </ul>
-              </div>
-            </div>
+            <a class="header__link @@if (page === 'projects' || page === 'projects-inner') {is-current}" href="projects.html" @@if (page === 'projects') {aria-current="page"}>
+              Проекты
+              <svg class="header__icon" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg>
+            </a>
           </li>
 
           <li class="header__item">
