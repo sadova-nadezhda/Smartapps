@@ -49,6 +49,19 @@
     }
   }
 
+  &__filter {
+    width: s(212);
+
+    @include mobile {
+      width: auto;
+    }
+
+    .dropdown__toggle,
+    .dropdown__list {
+      width: 100%;
+    }
+  }
+
   &__subtitle {
     grid-column: 1 / -1;
     max-width: s(800);
