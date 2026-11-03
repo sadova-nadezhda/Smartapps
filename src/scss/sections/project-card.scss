@@ -11,10 +11,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: s(32) s(36) s(28) s(20);
+  padding: s(32) s(42) s(32) s(20);
 
   @include mobile {
-    padding: s(28) s(34) s(24) s(16);
+    padding: s(24) s(32) s(24) s(16);
   }
 
   &:has(.project-card__link:focus-visible) {
@@ -73,17 +73,17 @@
   &__meta {
     display: flex;
     gap: s(20);
-    margin-top: s(24);
+    margin-top: s(20);
 
     @include mobile {
       gap: s(16);
-      margin-top: s(20);
+      margin-top: s(16);
     }
   }
 
   &__label {
     font-size: s(12);
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     color: var(--color-text-muted);
   }
@@ -94,7 +94,7 @@
     color: var(--color-text);
 
     @include mobile {
-      font-size: s(13);
+      font-size: s(12);
     }
   }
 
@@ -102,7 +102,7 @@
     position: static;
     align-self: flex-start;
     margin-top: auto;
-    padding-top: s(28);
+    padding-top: s(32);
     font-size: s(14);
     font-weight: 600;
     text-transform: uppercase;

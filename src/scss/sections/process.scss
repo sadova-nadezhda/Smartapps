@@ -57,7 +57,7 @@
   &__card {
     flex-grow: 1;
     min-width: 0;
-    padding: s(11) s(12);
+    padding: s(12);
     border: 1px solid var(--color-line);
     background-color: var(--color-surface);
   }
@@ -71,10 +71,9 @@
   }
 
   &__text {
-    margin-top: s(10);
+    margin-top: s(12);
 
     @include mobile {
-      margin-top: s(8);
       font-size: s(14);
     }
   }

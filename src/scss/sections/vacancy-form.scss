@@ -48,7 +48,7 @@
     }
 
     @include mobile {
-      padding: s(24) s(16) s(28);
+      padding: s(24) s(16);
     }
   }
 
@@ -60,11 +60,10 @@
 
   &__text {
     max-width: s(540);
-    margin-top: s(14);
+    margin-top: s(12);
     font-size: s(18);
 
     @include mobile {
-      margin-top: s(12);
       font-size: s(16);
     }
   }
@@ -140,8 +139,8 @@
 
     svg {
       position: relative;
-      width: s(22);
-      height: s(22);
+      width: s(20);
+      height: s(20);
     }
   }
 
@@ -177,8 +176,8 @@
     transition: color 0.3s;
 
     svg {
-      width: s(14);
-      height: s(14);
+      width: s(16);
+      height: s(16);
       fill: none;
       stroke: currentColor;
       stroke-width: 1.2;

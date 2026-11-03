@@ -155,7 +155,7 @@
 
       .expertise__num {
         margin-top: 0;
-        margin-bottom: s(14);
+        margin-bottom: s(12);
       }
 
       .expertise__card-text {
@@ -183,11 +183,15 @@
 
   &__num {
     margin-top: auto;
-    padding-top: s(16);
+    padding-top: s(20);
     color: var(--color-line);
     font-size: s(20);
     font-weight: 600;
     line-height: 1;
+
+    @include mobile {
+      padding-top: s(16);
+    }
   }
 
   &__btn {

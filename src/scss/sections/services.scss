@@ -540,14 +540,12 @@
   }
 
   &__text {
-    margin-top: s(16);
-    font-size: s(15);
+    margin-top: s(12);
     line-height: 1.2;
     color: var(--color-text-muted);
 
     @include mobile {
-      margin-top: s(12);
-      font-size: s(13);
+      font-size: s(14);
     }
   }
 

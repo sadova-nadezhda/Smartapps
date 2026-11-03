@@ -70,7 +70,7 @@
   &__container {
     display: grid;
     grid-template-columns: s(115) minmax(0, 1fr) s(326);
-    gap: s(30) 0;
+    gap: s(32) 0;
 
     @include tablet {
       grid-template-columns: auto minmax(0, 1fr);
@@ -180,7 +180,7 @@
   }
 
   &__lead {
-    margin-top: s(12);
+    margin-top: s(14);
     font-size: s(20);
 
     @include mobile {
@@ -193,10 +193,10 @@
 
     @include cut-frame;
 
-    padding: s(28) s(20) s(32);
+    padding: s(32) s(20);
 
     @include mobile {
-      padding: s(24) s(16) s(28);
+      padding: s(24) s(16);
     }
   }
 
@@ -209,7 +209,7 @@
   }
 
   &__card-text {
-    margin-top: s(12);
+    margin-top: s(14);
 
     @include mobile {
       font-size: s(14);
@@ -251,11 +251,10 @@
   &__meta {
     display: flex;
     flex-direction: column;
-    gap: s(30);
+    gap: s(32);
 
     @include tablet {
       flex-direction: row;
-      gap: s(40);
     }
 
     @include mobile {
@@ -275,7 +274,7 @@
   }
 
   &__value {
-    margin-top: s(8);
+    margin-top: s(5);
 
     @include mobile {
       font-size: s(14);

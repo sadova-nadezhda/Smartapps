@@ -27,12 +27,10 @@
       <nav class="header__nav" aria-label="Основное меню">
         <ul class="header__menu">
           <li class="header__item header__item--mega">
-            <div class="header__split">
-              <a class="header__link" href="#">Услуги</a>
-              <button class="header__toggle header__toggle--split" type="button" aria-expanded="false" aria-controls="menu-service" aria-label="Открыть меню «Услуги»">
-                <svg class="header__icon" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg>
-              </button>
-            </div>
+            <button class="header__link header__toggle @@if (page === 'services') {is-current}" type="button" aria-expanded="false" aria-controls="menu-services">
+              Услуги
+              <svg class="header__icon" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg>
+            </button>
             <div class="header__dropdown header__dropdown--mega" id="menu-service">
               <div class="header__dropdown-inner">
                 <div class="menu-service">
@@ -44,9 +42,9 @@
                     <div class="menu-service__body" id="menu-service-1">
                     <div class="menu-service__inner">
                     <ul class="header__sublist">
-                      <li><a class="header__sublink" href="#">Консалтинг и планирование<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Проектирование и внедрение<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Сопровождение ИТ-инфраструктуры<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Консалтинг и планирование<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Проектирование и внедрение<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Сопровождение ИТ-инфраструктуры<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
                     </ul>
                     </div>
                     </div>
@@ -59,11 +57,11 @@
                     <div class="menu-service__body" id="menu-service-2">
                     <div class="menu-service__inner">
                     <ul class="header__sublist">
-                      <li><a class="header__sublink" href="#">ИТ-инфраструктура<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Корпоративные сети<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Кибербезопасность<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Бизнес-системы<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Облачные решения<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">ИТ-инфраструктура<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Корпоративные сети<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Кибербезопасность<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Бизнес-системы<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Облачные решения<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
                     </ul>
                     </div>
                     </div>
@@ -76,11 +74,11 @@
                     <div class="menu-service__body" id="menu-service-3">
                     <div class="menu-service__inner">
                     <ul class="header__sublist">
-                      <li><a class="header__sublink" href="#">Программное обеспечение<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Серверное оборудование<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Сетевое оборудование<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Системы хранения данных<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
-                      <li><a class="header__sublink" href="#">Восстановленное оборудование<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Программное обеспечение<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Серверное оборудование<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Сетевое оборудование<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Системы хранения данных<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
+                      <li><a class="header__sublink" href="services.html">Восстановленное оборудование<svg class="header__arrow" viewBox="0 0 6 10" aria-hidden="true" focusable="false"><path d="M1 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></a></li>
                     </ul>
                     </div>
                     </div>

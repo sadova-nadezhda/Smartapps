@@ -100,10 +100,10 @@
 
   &__info {
     flex-grow: 1;
-    padding: s(20) s(20) s(36);
+    padding: s(20) s(20) s(40);
 
     @include mobile {
-      padding: s(16) s(16) s(28);
+      padding: s(16) s(16) s(24);
     }
   }
 

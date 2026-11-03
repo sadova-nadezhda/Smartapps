@@ -84,7 +84,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: s(28) s(32) s(28) s(20);
+  padding: s(32) s(20);
 
   @include mobile {
     --cut: #{s(20)};
@@ -119,7 +119,7 @@
   }
 
   &__title {
-    font: 600 s(20)/1.1 var(--font-main);
+    font: 600 s(20)/1 var(--font-main);
 
     @include mobile {
       font-size: s(18);
@@ -131,7 +131,6 @@
     font-size: s(16);
 
     @include mobile {
-      margin-top: s(12);
       font-size: s(14);
     }
   }
@@ -139,39 +138,31 @@
   &__meta {
     display: flex;
     gap: s(20);
-    margin-top: s(24);
+    margin-top: s(20);
 
     @include mobile {
       gap: s(16);
-      margin-top: s(20);
+      margin-top: s(16);
     }
   }
 
   &__label {
     color: var(--color-text-muted);
-    font-size: s(14);
-    font-weight: 500;
+    font-size: s(12);
+    font-weight: 600;
     text-transform: uppercase;
-
-    @include mobile {
-      font-size: s(12);
-    }
   }
 
   &__value {
-    margin-top: s(8);
-    font-size: s(16);
-
-    @include mobile {
-      font-size: s(14);
-    }
+    margin-top: s(6);
+    font-size: s(14);
   }
 
   &__link {
     position: static;
     align-self: flex-start;
     margin-top: auto;
-    padding-top: s(28);
+    padding-top: s(32);
     font-size: s(16);
     font-weight: 600;
     text-transform: uppercase;
@@ -181,7 +172,7 @@
     outline: none;
 
     @include mobile {
-      padding-top: s(28);
+      padding-top: s(24);
       font-size: s(14);
     }
 
